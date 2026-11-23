@@ -1,0 +1,17 @@
+{
+    "active_blocks":  [
+                          "A",
+                          "B",
+                          "C"
+                      ],
+    "feature_priority":  [
+                             "ndc_open",
+                             "corner",
+                             "mdr",
+                             "solid",
+                             "sunface",
+                             "park_face",
+                             "pair"
+                         ],
+    "price_unit":  "total_plot_pkr"
+}

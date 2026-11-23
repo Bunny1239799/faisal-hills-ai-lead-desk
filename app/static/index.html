@@ -1,0 +1,508 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Faisal Hills AI Lead Desk</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f4f6f8;
+            color: #1f2937;
+        }
+
+        .wrap {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 24px;
+        }
+
+        .header {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 18px;
+            box-shadow: 0 2px 10px rgba(0,0,0,.06);
+        }
+
+        h1 {
+            margin: 0 0 6px;
+            font-size: 26px;
+        }
+
+        .status {
+            font-size: 14px;
+            color: #166534;
+            font-weight: 600;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 18px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 12px;
+            padding: 18px;
+            box-shadow: 0 2px 10px rgba(0,0,0,.06);
+        }
+
+        .full {
+            grid-column: 1 / -1;
+        }
+
+        textarea {
+            width: 100%;
+            min-height: 120px;
+            resize: vertical;
+            box-sizing: border-box;
+            padding: 12px;
+            border: 1px solid #d1d5db;
+            border-radius: 8px;
+            font: inherit;
+        }
+
+        button {
+            margin-top: 10px;
+            padding: 10px 16px;
+            border: 0;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+        }
+
+        #send {
+            background: #111827;
+            color: white;
+        }
+
+        pre {
+            white-space: pre-wrap;
+            word-break: break-word;
+            background: #f8fafc;
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            padding: 12px;
+            max-height: 500px;
+            overflow: auto;
+        }
+
+        .label {
+            font-size: 13px;
+            font-weight: 700;
+            color: #6b7280;
+            margin-bottom: 6px;
+        }
+
+        .error {
+            color: #b91c1c;
+            font-weight: 600;
+        }
+
+        /* M7 - the matching-listings / evidence panel */
+        .panel-row {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            align-items: flex-end;
+            margin-bottom: 12px;
+        }
+
+        .panel-row label {
+            display: block;
+            font-size: 12px;
+            font-weight: 700;
+            color: #6b7280;
+            margin-bottom: 4px;
+        }
+
+        .panel-row input, .panel-row select {
+            padding: 8px 10px;
+            border: 1px solid #d1d5db;
+            border-radius: 8px;
+            font: inherit;
+            min-width: 90px;
+            box-sizing: border-box;
+        }
+
+        table.listings {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 13px;
+            margin-top: 6px;
+        }
+
+        table.listings th, table.listings td {
+            border-bottom: 1px solid #e5e7eb;
+            padding: 6px 8px;
+            text-align: left;
+            white-space: nowrap;
+        }
+
+        table.listings th {
+            color: #6b7280;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: .04em;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 999px;
+            font-size: 11px;
+            font-weight: 700;
+        }
+
+        .badge.ok { background: #dcfce7; color: #166534; }
+        .badge.warn { background: #fef3c7; color: #92400e; }
+        .badge.bad { background: #fee2e2; color: #991b1b; }
+
+        .muted { color: #6b7280; font-size: 12px; }
+
+        @media (max-width: 800px) {
+            .grid {
+                grid-template-columns: 1fr;
+            }
+
+            .full {
+                grid-column: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="wrap">
+    <div class="header">
+        <h1>Faisal Hills AI Lead Desk</h1>
+        <div class="status" id="status">Console connected</div>
+    </div>
+
+    <div class="grid">
+        <div class="card full">
+            <div class="label">CUSTOMER MESSAGE</div>
+            <textarea id="message" placeholder="Example: What is the price of a 7 marla plot in Block C?"></textarea>
+            <button id="send">Process Message</button>
+            <div id="error" class="error"></div>
+        </div>
+
+        <div class="card">
+            <div class="label">DRAFT REPLY</div>
+            <pre id="draft">No message processed yet.</pre>
+        </div>
+
+        <div class="card">
+            <div class="label">VERIFIED FACTS USED</div>
+            <pre id="facts">No facts yet.</pre>
+        </div>
+
+        <div class="card">
+            <div class="label">DECISION / POLICY</div>
+            <pre id="decision">No decision yet.</pre>
+        </div>
+
+        <div class="card">
+            <div class="label">LEAD BRIEF</div>
+            <pre id="lead">No lead brief yet.</pre>
+        </div>
+
+        <div class="card full">
+            <div class="label">MATCHING LISTINGS (M7 EVIDENCE)</div>
+            <div class="panel-row">
+                <div>
+                    <label for="evBlock">BLOCK</label>
+                    <input id="evBlock" placeholder="C" value="C">
+                </div>
+                <div>
+                    <label for="evSize">SIZE (MARLA)</label>
+                    <input id="evSize" placeholder="7" value="7">
+                </div>
+                <div>
+                    <label for="evLimit">LIMIT</label>
+                    <input id="evLimit" placeholder="50" value="50">
+                </div>
+                <div>
+                    <label for="evIdentify">PLOT IDENTIFIER</label>
+                    <select id="evIdentify">
+                        <option value="false">Redacted (default)</option>
+                        <option value="true">Authorised - show plot number</option>
+                    </select>
+                </div>
+                <div>
+                    <label>&nbsp;</label>
+                    <button id="loadEvidence">Load Evidence</button>
+                </div>
+            </div>
+            <div id="evStatus" class="muted">No evidence loaded yet.</div>
+            <div id="evTable"></div>
+        </div>
+
+        <div class="card full">
+            <div class="label">OPERATOR REVIEW</div>
+            <div class="panel-row">
+                <div>
+                    <label for="rvLead">LEAD ID</label>
+                    <input id="rvLead" placeholder="lead id">
+                </div>
+                <div>
+                    <label for="rvReason">REASON (for a rejection)</label>
+                    <input id="rvReason" placeholder="optional">
+                </div>
+                <div>
+                    <label>&nbsp;</label>
+                    <button id="rvApprove">Approve</button>
+                    <button id="rvReject">Reject</button>
+                </div>
+            </div>
+            <div id="rvStatus" class="muted">No review recorded yet.</div>
+        </div>
+
+        <div class="card full">
+            <div class="label">RAW API RESULT</div>
+            <pre id="raw">No API result yet.</pre>
+        </div>
+    </div>
+</div>
+
+<script>
+const messageBox = document.getElementById("message");
+const sendButton = document.getElementById("send");
+const errorBox = document.getElementById("error");
+
+sendButton.addEventListener("click", async () => {
+    errorBox.textContent = "";
+    sendButton.disabled = true;
+    sendButton.textContent = "Processing...";
+
+    try {
+        const message = messageBox.value.trim();
+
+        if (!message) {
+            throw new Error("Enter a customer message first.");
+        }
+
+        const response = await fetch("/api/message", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                message: message,
+                channel: "web_console"
+            })
+        });
+
+        const text = await response.text();
+
+        let data;
+
+        try {
+            data = JSON.parse(text);
+        } catch {
+            throw new Error(
+                `API returned HTTP ${response.status}: ${text}`
+            );
+        }
+
+        if (!response.ok) {
+            throw new Error(
+                `API returned HTTP ${response.status}: ` +
+                (data.detail || text)
+            );
+        }
+
+        document.getElementById("draft").textContent =
+            data.draft_reply ?? "No draft reply returned.";
+
+        document.getElementById("facts").textContent =
+            JSON.stringify({
+                facts_used: data.facts_used,
+                market_facts: data.market_facts,
+                n: data.n,
+                level: data.level,
+                needs_human_approval: data.needs_human_approval
+            }, null, 2);
+
+        document.getElementById("decision").textContent =
+            JSON.stringify({
+                decision: data.decision,
+                policy_reasons: data.policy_reasons
+            }, null, 2);
+
+        document.getElementById("lead").textContent =
+            JSON.stringify(data.lead_brief, null, 2);
+
+        document.getElementById("raw").textContent =
+            JSON.stringify(data, null, 2);
+
+        // M7: the lead id the reply belongs to, so the operator can
+        // review it against the evidence that produced it.
+        window.__lastLeadId = data.lead_id || null;
+        if (data.lead_id) {
+            document.getElementById("rvLead").value = data.lead_id;
+        }
+
+        document.getElementById("status").textContent =
+            "Message processed successfully";
+    } catch (error) {
+        errorBox.textContent = error.message;
+        document.getElementById("status").textContent =
+            "Request failed";
+    } finally {
+        sendButton.disabled = false;
+        sendButton.textContent = "Process Message";
+    }
+});
+
+// ---------------------------------------------------------------------------
+// M7 - the matching-listings / evidence panel and the operator review
+// ---------------------------------------------------------------------------
+
+const evStatus = document.getElementById("evStatus");
+const evTable = document.getElementById("evTable");
+const rvStatus = document.getElementById("rvStatus");
+
+function _money(value) {
+    if (value === null || value === undefined) return "-";
+    return "PKR " + Number(value).toLocaleString("en-US", {
+        maximumFractionDigits: 0
+    });
+}
+
+function _cell(value) {
+    if (value === null || value === undefined) return "-";
+    return String(value);
+}
+
+document.getElementById("loadEvidence").addEventListener("click", async () => {
+    evStatus.textContent = "Loading evidence...";
+    evTable.innerHTML = "";
+
+    const params = new URLSearchParams();
+    const block = document.getElementById("evBlock").value.trim();
+    const size = document.getElementById("evSize").value.trim();
+    const limit = document.getElementById("evLimit").value.trim();
+    const identify = document.getElementById("evIdentify").value;
+
+    if (block) params.set("block", block);
+    if (size) params.set("size_marla", size);
+    if (limit) params.set("limit", limit);
+    if (identify === "true") params.set("include_plot_number", "true");
+
+    try {
+        const response = await fetch("/api/evidence?" + params.toString());
+        const data = await response.json();
+
+        if (!response.ok) {
+            evStatus.textContent = "Evidence refused: " +
+                (data.detail || "unknown reason");
+            return;
+        }
+
+        const summary = data.summary || {};
+        const answerable = data.answerable;
+        const badge = answerable
+            ? '<span class="badge ok">answerable</span>'
+            : '<span class="badge warn">not enough data</span>';
+
+        evStatus.innerHTML =
+            badge +
+            ' &middot; ' + _cell(summary.matched_plots) + ' matching listings' +
+            ' &middot; ' + _cell(summary.observation_count) + ' observations' +
+            ' &middot; ' + _cell(summary.priced_plots) + ' priced' +
+            ' &middot; median ' + _money(summary.price_median_pkr) +
+            ' &middot; latest ' + _cell(summary.latest_date) +
+            ' &middot; mode: ' + _cell(data.plot_number_mode) +
+            (data.guard && data.guard.ok === false
+                ? ' &middot; <span class="badge bad">guard blocked the figures</span>'
+                : '');
+
+        if (!data.listings || !data.listings.length) {
+            evTable.innerHTML = '<p class="muted">No listings returned.</p>';
+            return;
+        }
+
+        const rows = data.listings.map(function (item) {
+            const reason = (item.matching_reason || []).join(", ");
+            return '<tr>' +
+                '<td>' + _cell(item.listing_ref) + '</td>' +
+                '<td>' + _cell(item.block) + '</td>' +
+                '<td>' + _cell(item.size_marla) + '</td>' +
+                '<td>' + _money(item.price_median_pkr) + '</td>' +
+                '<td>' + _money(item.price_min_pkr) + '</td>' +
+                '<td>' + _money(item.price_max_pkr) + '</td>' +
+                '<td>' + _cell(item.observation_count) + '</td>' +
+                '<td>' + _cell(item.latest_date) + '</td>' +
+                '<td>' + _cell(item.plot_number) + '</td>' +
+                '<td>' + _cell(reason) + '</td>' +
+                '</tr>';
+        }).join("");
+
+        evTable.innerHTML =
+            '<table class="listings"><thead><tr>' +
+            '<th>Ref</th><th>Block</th><th>Size</th><th>Median</th>' +
+            '<th>Min</th><th>Max</th><th>Obs</th><th>Date</th>' +
+            '<th>Plot</th><th>Matched because</th>' +
+            '</tr></thead><tbody>' + rows + '</tbody></table>';
+    } catch (error) {
+        evStatus.textContent = "Evidence request failed: " + error.message;
+    }
+});
+
+async function _recordReview(decision) {
+    const leadId = document.getElementById("rvLead").value.trim();
+    const reason = document.getElementById("rvReason").value.trim();
+
+    if (!leadId) {
+        rvStatus.textContent = "Enter a lead id first.";
+        return;
+    }
+
+    rvStatus.textContent = "Recording review...";
+
+    const body = new URLSearchParams();
+    body.set("decision", decision);
+    if (reason) body.set("reason", reason);
+
+    try {
+        const response = await fetch(
+            "/api/leads/" + encodeURIComponent(leadId) + "/review",
+            {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/x-www-form-urlencoded"
+                },
+                body: body.toString()
+            }
+        );
+        const data = await response.json();
+
+        if (!response.ok) {
+            rvStatus.textContent = "Review refused: " +
+                (data.detail || "unknown reason");
+            return;
+        }
+
+        rvStatus.textContent =
+            "Review recorded: " + data.decision +
+            " (outcome: " + data.outcome +
+            ", evidence digest: " + data.evidence_digest +
+            ", listings: " + data.listing_count + ")";
+    } catch (error) {
+        rvStatus.textContent = "Review request failed: " + error.message;
+    }
+}
+
+document.getElementById("rvApprove").addEventListener("click", function () {
+    _recordReview("approved");
+});
+
+document.getElementById("rvReject").addEventListener("click", function () {
+    _recordReview("rejected");
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Inventory workspace · Faisal Hills AI Lead Desk</title>
+<link rel="stylesheet" href="/static/operator.css?v=1.0.5">
+<style>
+  .inv-wrap { max-width: 1180px; margin: 0 auto; padding: 22px 26px 60px; }
+  .inv-head { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; margin-bottom: 6px; }
+  .inv-head h1 { font-size: 20px; margin: 0; }
+  .prov { font-size: 11px; letter-spacing: .06em; text-transform: uppercase;
+          border: 1px solid var(--line, #38404d); border-radius: 999px;
+          padding: 3px 9px; opacity: .85; }
+  .inv-sub { opacity: .72; font-size: 13px; margin: 4px 0 20px; }
+  .inv-card { border: 1px solid var(--line, #2c333d); border-radius: 12px;
+              padding: 16px 18px; margin-bottom: 18px; background: var(--panel, rgba(255,255,255,.02)); }
+  .inv-card h2 { font-size: 14px; margin: 0 0 10px; letter-spacing: .02em; }
+  .inv-chip { font-size: 12px; font-family: ui-monospace, Consolas, monospace;
+              border: 1px solid var(--line, #38404d); border-radius: 8px;
+              padding: 4px 9px; }
+  .inv-row { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+  input[type=file] { color: inherit; font-size: 13px; }
+  .inv-btn { border: 1px solid var(--line, #3a4350); background: transparent;
+             color: inherit; border-radius: 8px; padding: 7px 12px; font-size: 13px;
+             cursor: pointer; }
+  .inv-btn:hover { border-color: #6f7f95; }
+  .inv-btn.primary { background: #2f6f4f; border-color: #2f6f4f; color: #fff; }
+  .inv-btn[disabled] { opacity: .45; cursor: not-allowed; }
+  table.inv { width: 100%; border-collapse: collapse; font-size: 12.5px; }
+  table.inv th, table.inv td { text-align: left; padding: 7px 9px;
+      border-bottom: 1px solid var(--line, #262c35); vertical-align: top; }
+  table.inv th { font-weight: 600; opacity: .8; }
+  .err { color: #ff8b8b; }
+  .warn { color: #e8c06a; }
+  .ok { color: #6fd39a; }
+  .mono { font-family: ui-monospace, Consolas, monospace; font-size: 11.5px; }
+  .inv-note { font-size: 12px; opacity: .7; margin-top: 8px; }
+  .inv-msg { font-size: 12.5px; margin-top: 10px; }
+  .inv-scroll { max-height: 320px; overflow: auto; }
+</style>
+</head>
+<body>
+<div class="inv-wrap">
+  <div class="inv-head">
+    <h1>Inventory workspace</h1>
+    <span class="prov">provisional</span>
+    <span class="inv-chip" id="inv-chip">__INV_CHIP__</span>
+    <span style="flex:1"></span>
+    <a class="inv-btn" href="/operator">← Operator desk</a>
+  </div>
+  <p class="inv-sub">
+    Upload → preview &amp; column map → validate → review → approve → activate
+    → rollback → audit. Nothing here changes the protected master; with no
+    active version the desk serves exactly what it serves today.
+  </p>
+
+  <div class="inv-card">
+    <h2>1 · Template and upload</h2>
+    <div class="inv-row">
+      <a class="inv-btn" href="/api/inventory/template.csv" download>Download CSV template</a>
+      <input type="file" id="inv-file" accept=".csv,.jsonl">
+      <button class="inv-btn primary" id="inv-upload" type="button">Upload &amp; validate</button>
+      <span class="inv-msg" id="inv-upload-msg"></span>
+    </div>
+    <p class="inv-note">
+      Columns: <span class="mono">block, size_marla (marla), asking_price_pkr (PKR),
+      observation_date (YYYY-MM-DD), source_note, features</span>.
+      Max 5 MB, CSV or JSONL, UTF-8 only.
+    </p>
+  </div>
+
+  <div class="inv-card">
+    <h2>2 · Validation report <span class="mono" id="inv-version"></span></h2>
+    <div id="inv-report">Upload a file to see its row-level report.</div>
+  </div>
+
+  <div class="inv-card">
+    <h2>3 · Versions</h2>
+    <div class="inv-scroll"><table class="inv" id="inv-versions">
+      <thead><tr><th>Version</th><th>Status</th><th>Rows</th><th>Range</th>
+      <th>Source</th><th>Actions</th></tr></thead>
+      <tbody></tbody></table></div>
+    <div class="inv-msg" id="inv-version-msg"></div>
+  </div>
+
+  <div class="inv-card">
+    <h2>4 · Audit log (tail)</h2>
+    <div class="inv-scroll"><table class="inv" id="inv-audit">
+      <thead><tr><th>When</th><th>Action</th><th>Version</th><th>Actor</th><th>Detail</th></tr></thead>
+      <tbody></tbody></table></div>
+  </div>
+</div>
+<script src="/static/inventory.js?v=1.0.5"></script>
+</body>
+</html>

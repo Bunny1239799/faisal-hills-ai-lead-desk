@@ -1,0 +1,19 @@
+{
+  "version": "1.0-partial",
+  "created": "2026-10-08T19:15:48",
+  "source": "First ~10 of 275 chunks (Gemini extraction)",
+  "unique_plots": 374,
+  "blocks_covered": [
+    "A",
+    "B",
+    "C",
+    "Executive",
+    "other"
+  ],
+  "notes": [
+    "This is a partial master built from the data available on 2026-10-08.",
+    "Remaining ~265 chunks will be extracted later with local Qwen and appended.",
+    "Re-run 04_validate.py → 05_dedup.py → 07_master.py on the full extracted.jsonl to refresh.",
+    "No phone numbers, sender names or raw_text are present."
+  ]
+}

@@ -1,0 +1,10 @@
+
+## AMENDMENT G (2026-10-05) - scope and rules to ship now (supersedes earlier amendments where different)
+- market/config.json active_blocks = A, B, C. Listings for D, Executive (FHE) and others are still parsed and stored (tag out_of_scope) but excluded from stats and from customer-facing price answers. get_market_range for a block outside active_blocks returns None with reason out_of_scope_block, and the pipeline escalates to a human.
+- Prices are totals for the whole plot, never per marla (dealer-confirmed).
+- Features: solid = plot without filling (adds value); filling, filled and bharti = holes were filled with soil (reduces value). Store solid=true or filling=true, otherwise unknown. "solid" inside bulk phrases such as "solid plot investor rate" is the same feature.
+- Price drivers: config feature_priority = ndc_open, corner, mdr, solid, sunface, park_face, pair. get_market_range(block, size, features) tries the full requested feature set first, then drops the lowest-priority requested feature one at a time until n >= min_n and distinct senders >= min_senders. It returns the level, the features used, n, n_senders, the date range and a plain-language note listing which requested features were dropped. The note is required in any reply that uses the result.
+- Dimension/label discovery: when one message has both a dimension (30x50) and a marla or kanal label, record the pair in alias_candidates with counts. The report lists dimensions not in size_aliases.json with the labels seen beside them. Candidates are NEVER used automatically; a human approves them by editing size_aliases.json.
+- Unmapped dimension or label: excluded from size stats, included in block-level counts.
+- The report ends with a SCOPE section: listings in scope vs out of scope per block, and the top 5 reasons listings could not be used.
+- Tests use fabricated lines only.

@@ -1,0 +1,680 @@
+{
+  "cases": [
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.9287,
+        "choice": "greeting",
+        "confidence": 0.8519,
+        "probabilities": {
+          "apartment": 0.0039,
+          "availability": 0.0112,
+          "booking": 0.0027,
+          "commercial": 0.0008,
+          "complaint": 0.0014,
+          "greeting": 0.9287,
+          "house": 0.0019,
+          "other": 0.0475,
+          "plot": 0.0009,
+          "price": 0.001
+        },
+        "type": "choice"
+      },
+      "confidence": 0.9287,
+      "correct": true,
+      "expected": "greeting",
+      "language": "en",
+      "model": "multilingual",
+      "qid": "lead_type",
+      "scores": {
+        "choice_accuracy": 1.0,
+        "mean_confidence": 0.9287,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "greeting"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.5366,
+        "confidence": 0.5366,
+        "noul": 0.5366,
+        "type": "noul"
+      },
+      "confidence": 0.5366,
+      "correct": false,
+      "expected": false,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "high_intent",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.5366,
+        "noul_accuracy": 0.0,
+        "score_mae": null
+      },
+      "tags": [
+        "greeting"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.583,
+        "confidence": 0.583,
+        "noul": 0.583,
+        "type": "noul"
+      },
+      "confidence": 0.583,
+      "correct": false,
+      "expected": false,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "needs_human",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.583,
+        "noul_accuracy": 0.0,
+        "score_mae": null
+      },
+      "tags": [
+        "greeting"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.9971,
+        "choice": "price",
+        "confidence": 0.9904,
+        "probabilities": {
+          "apartment": 0.0,
+          "availability": 0.0001,
+          "booking": 0.0,
+          "commercial": 0.0001,
+          "complaint": 0.0,
+          "greeting": 0.0,
+          "house": 0.0001,
+          "other": 0.0001,
+          "plot": 0.0023,
+          "price": 0.9971
+        },
+        "type": "choice"
+      },
+      "confidence": 0.9971,
+      "correct": true,
+      "expected": "price",
+      "language": "en",
+      "model": "multilingual",
+      "qid": "lead_type",
+      "scores": {
+        "choice_accuracy": 1.0,
+        "mean_confidence": 0.9971,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "price",
+        "high_intent"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.6684,
+        "confidence": 0.6684,
+        "noul": 0.6684,
+        "type": "noul"
+      },
+      "confidence": 0.6684,
+      "correct": true,
+      "expected": true,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "high_intent",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.6684,
+        "noul_accuracy": 1.0,
+        "score_mae": null
+      },
+      "tags": [
+        "price",
+        "high_intent"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.8222,
+        "confidence": 0.8222,
+        "noul": 0.8222,
+        "type": "noul"
+      },
+      "confidence": 0.8222,
+      "correct": false,
+      "expected": false,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "needs_human",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.8222,
+        "noul_accuracy": 0.0,
+        "score_mae": null
+      },
+      "tags": [
+        "price",
+        "high_intent"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.5902,
+        "choice": "plot",
+        "confidence": 0.5357,
+        "probabilities": {
+          "apartment": 0.0034,
+          "availability": 0.2825,
+          "booking": 0.014,
+          "commercial": 0.0067,
+          "complaint": 0.0007,
+          "greeting": 0.0009,
+          "house": 0.0887,
+          "other": 0.0106,
+          "plot": 0.5902,
+          "price": 0.0022
+        },
+        "type": "choice"
+      },
+      "confidence": 0.5902,
+      "correct": false,
+      "expected": "availability",
+      "language": "en",
+      "model": "multilingual",
+      "qid": "lead_type",
+      "scores": {
+        "choice_accuracy": 0.0,
+        "mean_confidence": 0.5902,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "availability",
+        "high_intent"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.7648,
+        "confidence": 0.7648,
+        "noul": 0.7648,
+        "type": "noul"
+      },
+      "confidence": 0.7648,
+      "correct": true,
+      "expected": true,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "high_intent",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.7648,
+        "noul_accuracy": 1.0,
+        "score_mae": null
+      },
+      "tags": [
+        "availability",
+        "high_intent"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.8091,
+        "confidence": 0.8091,
+        "noul": 0.1909,
+        "type": "noul"
+      },
+      "confidence": 0.8091,
+      "correct": true,
+      "expected": false,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "needs_human",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.8091,
+        "noul_accuracy": 1.0,
+        "score_mae": null
+      },
+      "tags": [
+        "availability",
+        "high_intent"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.9686,
+        "choice": "booking",
+        "confidence": 0.9155,
+        "probabilities": {
+          "apartment": 0.0009,
+          "availability": 0.0057,
+          "booking": 0.9686,
+          "commercial": 0.0019,
+          "complaint": 0.0003,
+          "greeting": 0.0005,
+          "house": 0.0066,
+          "other": 0.0043,
+          "plot": 0.0105,
+          "price": 0.0009
+        },
+        "type": "choice"
+      },
+      "confidence": 0.9686,
+      "correct": true,
+      "expected": "booking",
+      "language": "en",
+      "model": "multilingual",
+      "qid": "lead_type",
+      "scores": {
+        "choice_accuracy": 1.0,
+        "mean_confidence": 0.9686,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "booking",
+        "high_intent"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.7561,
+        "confidence": 0.7561,
+        "noul": 0.7561,
+        "type": "noul"
+      },
+      "confidence": 0.7561,
+      "correct": true,
+      "expected": true,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "high_intent",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.7561,
+        "noul_accuracy": 1.0,
+        "score_mae": null
+      },
+      "tags": [
+        "booking",
+        "high_intent"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.6179,
+        "confidence": 0.6179,
+        "noul": 0.6179,
+        "type": "noul"
+      },
+      "confidence": 0.6179,
+      "correct": false,
+      "expected": false,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "needs_human",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.6179,
+        "noul_accuracy": 0.0,
+        "score_mae": null
+      },
+      "tags": [
+        "booking",
+        "high_intent"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.8637,
+        "choice": "availability",
+        "confidence": 0.7999,
+        "probabilities": {
+          "apartment": 0.1191,
+          "availability": 0.8637,
+          "booking": 0.0149,
+          "commercial": 0.0002,
+          "complaint": 0.0001,
+          "greeting": 0.0003,
+          "house": 0.0007,
+          "other": 0.0005,
+          "plot": 0.0001,
+          "price": 0.0004
+        },
+        "type": "choice"
+      },
+      "confidence": 0.8637,
+      "correct": false,
+      "expected": "apartment",
+      "language": "en",
+      "model": "multilingual",
+      "qid": "lead_type",
+      "scores": {
+        "choice_accuracy": 0.0,
+        "mean_confidence": 0.8637,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "apartment"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.8123,
+        "confidence": 0.8123,
+        "noul": 0.8123,
+        "type": "noul"
+      },
+      "confidence": 0.8123,
+      "correct": true,
+      "expected": true,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "high_intent",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.8123,
+        "noul_accuracy": 1.0,
+        "score_mae": null
+      },
+      "tags": [
+        "apartment"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.737,
+        "confidence": 0.737,
+        "noul": 0.263,
+        "type": "noul"
+      },
+      "confidence": 0.737,
+      "correct": true,
+      "expected": false,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "needs_human",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.737,
+        "noul_accuracy": 1.0,
+        "score_mae": null
+      },
+      "tags": [
+        "apartment"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.9998,
+        "choice": "booking",
+        "confidence": 0.9989,
+        "probabilities": {
+          "apartment": 0.0002,
+          "availability": 0.0,
+          "booking": 0.9998,
+          "commercial": 0.0,
+          "complaint": 0.0001,
+          "greeting": 0.0,
+          "house": 0.0,
+          "other": 0.0,
+          "plot": 0.0,
+          "price": 0.0
+        },
+        "type": "choice"
+      },
+      "confidence": 0.9998,
+      "correct": false,
+      "expected": "complaint",
+      "language": "en",
+      "model": "multilingual",
+      "qid": "lead_type",
+      "scores": {
+        "choice_accuracy": 0.0,
+        "mean_confidence": 0.9998,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "complaint",
+        "human"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.584,
+        "confidence": 0.584,
+        "noul": 0.416,
+        "type": "noul"
+      },
+      "confidence": 0.584,
+      "correct": true,
+      "expected": false,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "high_intent",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.584,
+        "noul_accuracy": 1.0,
+        "score_mae": null
+      },
+      "tags": [
+        "complaint",
+        "human"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.6498,
+        "confidence": 0.6498,
+        "noul": 0.6498,
+        "type": "noul"
+      },
+      "confidence": 0.6498,
+      "correct": true,
+      "expected": true,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "needs_human",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.6498,
+        "noul_accuracy": 1.0,
+        "score_mae": null
+      },
+      "tags": [
+        "complaint",
+        "human"
+      ]
+    }
+  ],
+  "config": {
+    "dataset": "D:\\AI-Projects\\laya-gateway\\evaluation\\datasets\\phase28_smoke.jsonl",
+    "dataset_sha256": "b3775a5fbfb50c0d44cf71aa39e1e5a24d26ee923c17b31cdfdd08428b18f924",
+    "device": "cpu",
+    "laya_version": "0.3.22",
+    "model": "multilingual",
+    "questions_sha256": "7ccb24eec509f3172e5c357a08d687a17599d8787577966b3a7419d5c9ce91d1",
+    "revisions": {
+      "multilingual": "55cf4c4ebb4ebe31b2550e8bdf3bd21b99753851"
+    },
+    "schema": "laya-evals-report/1",
+    "thresholds": {
+      "baseline_tolerance": {},
+      "max": {},
+      "min": {}
+    },
+    "timing": {
+      "batch_form": null,
+      "batch_size": 1,
+      "chunks": 6,
+      "cost_metric": "per decision: that call divided by its own chunk size",
+      "latency_metric": "per request: the wall time of the call that returned it, unsplit",
+      "max_chunk": 1,
+      "rows_alone": 6,
+      "rows_grouped": 0,
+      "sort_by_length": false,
+      "sort_by_length_sent": false
+    }
+  },
+  "overall": {
+    "choice_accuracy": 0.5,
+    "cost_per_decision_p50_ms": 1252.6709999992818,
+    "cost_per_decision_p95_ms": 37195.31350000034,
+    "ece": 0.2766277777777778,
+    "latency_p50_ms": 1252.6709999992818,
+    "latency_p95_ms": 37195.31350000034,
+    "mean_confidence": 0.7605166666666666,
+    "noul_accuracy": 0.6666666666666666
+  },
+  "slices": {
+    "language": {
+      "en": {
+        "choice_accuracy": 0.5,
+        "ece": 0.2766277777777778,
+        "mean_confidence": 0.7605166666666666,
+        "noul_accuracy": 0.6666666666666666
+      }
+    },
+    "model": {
+      "multilingual": {
+        "choice_accuracy": 0.5,
+        "ece": 0.2766277777777778,
+        "mean_confidence": 0.7605166666666666,
+        "noul_accuracy": 0.6666666666666666
+      }
+    },
+    "qid": {
+      "high_intent": {
+        "ece": 0.18649999999999997,
+        "mean_confidence": 0.6870333333333334,
+        "noul_accuracy": 0.8333333333333334
+      },
+      "lead_type": {
+        "choice_accuracy": 0.5,
+        "ece": 0.4151166666666667,
+        "mean_confidence": 0.89135
+      },
+      "needs_human": {
+        "ece": 0.2908333333333333,
+        "mean_confidence": 0.7031666666666667,
+        "noul_accuracy": 0.5
+      }
+    },
+    "tag": {
+      "apartment": {
+        "choice_accuracy": 0.0,
+        "ece": 0.31300000000000006,
+        "mean_confidence": 0.8043333333333335,
+        "noul_accuracy": 1.0
+      },
+      "availability": {
+        "choice_accuracy": 0.0,
+        "ece": 0.3387666666666666,
+        "mean_confidence": 0.7213666666666666,
+        "noul_accuracy": 1.0
+      },
+      "booking": {
+        "choice_accuracy": 1.0,
+        "ece": 0.29773333333333335,
+        "mean_confidence": 0.7808666666666667,
+        "noul_accuracy": 0.5
+      },
+      "complaint": {
+        "choice_accuracy": 0.0,
+        "ece": 0.5886666666666667,
+        "mean_confidence": 0.7445333333333334,
+        "noul_accuracy": 1.0
+      },
+      "greeting": {
+        "choice_accuracy": 1.0,
+        "ece": 0.39696666666666663,
+        "mean_confidence": 0.6827666666666666,
+        "noul_accuracy": 0.0
+      },
+      "high_intent": {
+        "choice_accuracy": 0.6666666666666666,
+        "ece": 0.2982666666666666,
+        "mean_confidence": 0.7771555555555555,
+        "noul_accuracy": 0.6666666666666666
+      },
+      "human": {
+        "choice_accuracy": 0.0,
+        "ece": 0.5886666666666667,
+        "mean_confidence": 0.7445333333333334,
+        "noul_accuracy": 1.0
+      },
+      "price": {
+        "choice_accuracy": 1.0,
+        "ece": 0.38556666666666667,
+        "mean_confidence": 0.8292333333333334,
+        "noul_accuracy": 0.5
+      }
+    }
+  }
+}

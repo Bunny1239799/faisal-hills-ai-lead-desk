@@ -1,0 +1,215 @@
+{
+  "version": "1.0",
+  "updated": "2026-10-21",
+  "source": "FAISAL_HILLS_PROJECT_HANDOFF_v2.md section 7 rules 4 and 5; section 8 step 6",
+  "description": "Twenty hand-checked questions against the approved master inventory. Every expected_matched_plots and expected_median_pkr value below was MEASURED from the approved master (SHA256 b77b3cb5...) on 2026-10-21, not estimated. Cases marked must_not_answer cover the 'not enough data' path: below the 3-listing threshold, an unknown block, a parked block, or a filter the master cannot support.",
+  "min_listings_for_answer": 3,
+  "notes": [
+    "expect_median_pkr is omitted where the case must not produce a price.",
+    "Q13 (C/7 corner) IS answerable: 3 plots, median 9,600,000. The 'corner sun-facing' flagship query is answerable for block+size+corner.",
+    "Q20 (A/5 sun-facing) is NOT answerable: 1 plot. The master carries sun_facing on only 28 of 374 rows, so sun-facing filters are almost always too thin to answer.",
+    "Feature-filter coverage in the approved master, measured 2026-10-21: corner True=34 / null=340; sun_facing True=28 / null=346; ndc_open True=254 / False=6 / null=114."
+  ],
+  "questions": [
+    {
+      "id": 1,
+      "question": "What is the price of a 5 marla plot in Block A?",
+      "filters": { "block": "A", "size_marla": 5 },
+      "expect_matched_plots": 21,
+      "expect_median_pkr": 8400000,
+      "expect_min_pkr": 5400000,
+      "expect_max_pkr": 12200000,
+      "expect_observation_count": 27,
+      "must_answer": true
+    },
+    {
+      "id": 2,
+      "question": "What is the price of a 7 marla plot in Block A?",
+      "filters": { "block": "A", "size_marla": 7 },
+      "expect_matched_plots": 10,
+      "expect_median_pkr": 11250000,
+      "expect_min_pkr": 6500000,
+      "expect_max_pkr": 14200000,
+      "expect_observation_count": 15,
+      "must_answer": true
+    },
+    {
+      "id": 3,
+      "question": "What is the price of a 10 marla plot in Block A?",
+      "filters": { "block": "A", "size_marla": 10 },
+      "expect_matched_plots": 5,
+      "expect_median_pkr": 14500000,
+      "expect_min_pkr": 11500000,
+      "expect_max_pkr": 14600000,
+      "expect_observation_count": 6,
+      "must_answer": true
+    },
+    {
+      "id": 4,
+      "question": "What is the price of a 20 marla plot in Block A?",
+      "filters": { "block": "A", "size_marla": 20 },
+      "expect_matched_plots": 4,
+      "expect_median_pkr": 18500000,
+      "expect_min_pkr": 18000000,
+      "expect_max_pkr": 19000000,
+      "expect_observation_count": 4,
+      "must_answer": true
+    },
+    {
+      "id": 5,
+      "question": "What is the price of a 40 marla plot in Block A?",
+      "filters": { "block": "A", "size_marla": 40 },
+      "expect_matched_plots": 5,
+      "expect_median_pkr": 35000000,
+      "expect_min_pkr": 34500000,
+      "expect_max_pkr": 35000000,
+      "expect_observation_count": 5,
+      "must_answer": true
+    },
+    {
+      "id": 6,
+      "question": "What is the price of a 5 marla plot in Block B?",
+      "filters": { "block": "B", "size_marla": 5 },
+      "expect_matched_plots": 29,
+      "expect_median_pkr": 5400000,
+      "expect_min_pkr": 4500000,
+      "expect_max_pkr": 6600000,
+      "expect_observation_count": 86,
+      "must_answer": true
+    },
+    {
+      "id": 7,
+      "question": "What is the price of a 10 marla plot in Block B?",
+      "filters": { "block": "B", "size_marla": 10 },
+      "expect_matched_plots": 12,
+      "expect_median_pkr": 12400000,
+      "expect_min_pkr": 9300000,
+      "expect_max_pkr": 15000000,
+      "expect_observation_count": 51,
+      "must_answer": true
+    },
+    {
+      "id": 8,
+      "question": "What is the price of a 14 marla plot in Block B?",
+      "filters": { "block": "B", "size_marla": 14 },
+      "expect_matched_plots": 5,
+      "expect_median_pkr": 12000000,
+      "expect_min_pkr": 11600000,
+      "expect_max_pkr": 14500000,
+      "expect_observation_count": 6,
+      "must_answer": true
+    },
+    {
+      "id": 9,
+      "question": "What is the price of a 20 marla plot in Block B?",
+      "filters": { "block": "B", "size_marla": 20 },
+      "expect_matched_plots": 4,
+      "expect_median_pkr": 15750000,
+      "expect_min_pkr": 15000000,
+      "expect_max_pkr": 17000000,
+      "expect_observation_count": 16,
+      "must_answer": true
+    },
+    {
+      "id": 10,
+      "question": "What is the price of a 5 marla plot in Block C?",
+      "filters": { "block": "C", "size_marla": 5 },
+      "expect_matched_plots": 47,
+      "expect_median_pkr": 5600000,
+      "expect_min_pkr": 3950000,
+      "expect_max_pkr": 6800000,
+      "expect_observation_count": 146,
+      "must_answer": true
+    },
+    {
+      "id": 11,
+      "question": "What is the price of a 7 marla plot in Block C?",
+      "filters": { "block": "C", "size_marla": 7 },
+      "expect_matched_plots": 21,
+      "expect_median_pkr": 7900000,
+      "expect_min_pkr": 6000000,
+      "expect_max_pkr": 11500000,
+      "expect_observation_count": 43,
+      "must_answer": true
+    },
+    {
+      "id": 12,
+      "question": "What is the price of a 20 marla plot in Block C?",
+      "filters": { "block": "C", "size_marla": 20 },
+      "expect_matched_plots": 4,
+      "expect_median_pkr": 16500000,
+      "expect_min_pkr": 16500000,
+      "expect_max_pkr": 16500000,
+      "expect_observation_count": 6,
+      "must_answer": true
+    },
+    {
+      "id": 13,
+      "question": "What is the price of a corner 7 marla plot in Block C?",
+      "filters": { "block": "C", "size_marla": 7, "corner": true },
+      "expect_matched_plots": 3,
+      "expect_median_pkr": 9600000,
+      "expect_min_pkr": 7800000,
+      "expect_max_pkr": 9800000,
+      "expect_observation_count": 3,
+      "must_answer": true,
+      "note": "The flagship corner query IS answerable for block+size+corner. sun_facing is a different story: only 28 of 374 master rows carry it (D-13), so a sun-facing filter is almost always too thin."
+    },
+    {
+      "id": 14,
+      "question": "What is the price of a 7 marla plot in Block B?",
+      "filters": { "block": "B", "size_marla": 7 },
+      "expect_matched_plots": 2,
+      "must_not_answer": true,
+      "note": "Only 2 listings in B/7 - below the 3-listing threshold. Must say not enough data, never a number."
+    },
+    {
+      "id": 15,
+      "question": "What is the price of a 10 marla plot in Block C?",
+      "filters": { "block": "C", "size_marla": 10 },
+      "expect_matched_plots": 2,
+      "must_not_answer": true,
+      "note": "Only 2 listings in C/10 - below the 3-listing threshold."
+    },
+    {
+      "id": 16,
+      "question": "What is the price of a 14 marla plot in Block A?",
+      "filters": { "block": "A", "size_marla": 14 },
+      "expect_matched_plots": 2,
+      "must_not_answer": true,
+      "note": "Only 2 listings in A/14 - below the 3-listing threshold."
+    },
+    {
+      "id": 17,
+      "question": "What is the price of a 5 marla plot in Block Z?",
+      "filters": { "block": "Z", "size_marla": 5 },
+      "expect_matched_plots": 0,
+      "must_not_answer": true,
+      "note": "Block Z does not exist in the master and is out of v1 scope."
+    },
+    {
+      "id": 18,
+      "question": "What is the price of a 10 marla plot in the Executive Block?",
+      "filters": { "block": "E", "size_marla": 10 },
+      "expect_matched_plots": 0,
+      "must_not_answer": true,
+      "note": "Executive is parked: v1 scope is Blocks A, B, C only. Executive/10 has 0 rows in the master."
+    },
+    {
+      "id": 19,
+      "question": "What is the price of a 999 marla plot in Block C?",
+      "filters": { "block": "C", "size_marla": 999 },
+      "expect_matched_plots": 0,
+      "must_not_answer": true,
+      "note": "No such size in the master."
+    },
+    {
+      "id": 20,
+      "question": "What is the price of a sun-facing 5 marla plot in Block A?",
+      "filters": { "block": "A", "size_marla": 5, "sun_facing": true },
+      "expect_matched_plots": 1,
+      "must_not_answer": true,
+      "note": "Only 1 sun-facing plot in A/5. The master carries sun_facing on just 28 of 374 rows (346 are null, D-13), so sun-facing filters are almost always too thin to answer. Must say not enough data, never a number."
+    }
+  ]
+}

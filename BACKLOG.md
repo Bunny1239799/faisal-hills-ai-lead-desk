@@ -1,0 +1,16 @@
+# BACKLOG (parked on purpose; revisit after the MVP runs on real data)
+- Blocks D and Executive: official status, maps, size schedules (currently out of scope).
+- Does B-Extension exist? Is there an official Block D map?
+- Plot-number-to-size register (ask a dealer or the society for the Excel). Until then, sizes come from stated sizes and derived hints.
+- Re-confirm market/definitions.json and size_aliases.json with a second dealer.
+- Confirm the maps are official and current (Block A date not visible; B and C are dated Nov 2019).
+- Unmapped dimensions: 30x50 (guess: 6 marla, unconfirmed), 40x60, 40x70, 35x55, 45x80, 60x90, 70x120, 80x120.
+- Measure the price effect of mdr, solid vs filling, sunface, corner once there is enough data.
+- Files vs plots price comparison.
+- Price trend charts from stats snapshots.
+- Dealer private inventory import using tenant_id.
+- Official facts from the society: payment plans, availability, approvals.
+- WhatsApp Cloud API integration; native mobile app.
+- Laya diagnosis (TASK_05) and hold-out test set.
+- Legal review of the data use; consent of group admins.
+- Quality evaluation of Urdu and Roman Urdu replies.

@@ -1,0 +1,1064 @@
+[
+  {
+    "id": "01_full_qualification",
+    "description": "The five-turn qualification flow from the master file.",
+    "turns": [
+      {
+        "message": "I need a plot",
+        "expect_route": "clarify",
+        "expect_escalation": false,
+        "expect_option_cells": [],
+        "expect_unmet_demand": false,
+        "expect_fields": {
+          "size": {
+            "value": null,
+            "status": "unknown",
+            "source_turn": null
+          },
+          "block": {
+            "value": null,
+            "status": "unknown",
+            "source_turn": null
+          },
+          "budget": {
+            "value": null,
+            "status": "unknown",
+            "source_turn": null
+          },
+          "purpose": {
+            "value": null,
+            "status": "unknown",
+            "source_turn": null
+          },
+          "timeline": {
+            "value": null,
+            "status": "unknown",
+            "source_turn": null
+          }
+        }
+      },
+      {
+        "message": "5 marla",
+        "expect_route": "alternative",
+        "expect_escalation": false,
+        "expect_option_cells": [
+          [
+            "A",
+            5.0
+          ],
+          [
+            "B",
+            5.0
+          ],
+          [
+            "C",
+            5.0
+          ]
+        ],
+        "expect_unmet_demand": true,
+        "expect_fields": {
+          "size": {
+            "value": 5.0,
+            "status": "stated",
+            "source_turn": 2
+          },
+          "block": {
+            "value": null,
+            "status": "unknown",
+            "source_turn": null
+          },
+          "budget": {
+            "value": null,
+            "status": "unknown",
+            "source_turn": null
+          },
+          "purpose": {
+            "value": null,
+            "status": "unknown",
+            "source_turn": null
+          },
+          "timeline": {
+            "value": null,
+            "status": "unknown",
+            "source_turn": null
+          }
+        }
+      },
+      {
+        "message": "Block C",
+        "expect_route": "exact",
+        "expect_escalation": false,
+        "expect_option_cells": [
+          [
+            "C",
+            5.0
+          ]
+        ],
+        "expect_unmet_demand": false,
+        "expect_fields": {
+          "size": {
+            "value": 5.0,
+            "status": "stated",
+            "source_turn": 2
+          },
+          "block": {
+            "value": "C",
+            "status": "stated",
+            "source_turn": 3
+          },
+          "budget": {
+            "value": null,
+            "status": "unknown",
+            "source_turn": null
+          },
+          "purpose": {
+            "value": null,
+            "status": "unknown",
+            "source_turn": null
+          },
+          "timeline": {
+            "value": null,
+            "status": "unknown",
+            "source_turn": null
+          }
+        }
+      },
+      {
+        "message": "around 8 million",
+        "expect_route": "alternative",
+        "expect_escalation": false,
+        "expect_option_cells": [
+          [
+            "A",
+            5.0
+          ]
+        ],
+        "expect_unmet_demand": true,
+        "expect_fields": {
+          "size": {
+            "value": 5.0,
+            "status": "stated",
+            "source_turn": 2
+          },
+          "block": {
+            "value": "C",
+            "status": "stated",
+            "source_turn": 3
+          },
+          "budget": {
+            "value": {
+              "min_pkr": 8000000,
+              "max_pkr": 8000000
+            },
+            "status": "stated",
+            "source_turn": 4
+          },
+          "purpose": {
+            "value": null,
+            "status": "unknown",
+            "source_turn": null
+          },
+          "timeline": {
+            "value": null,
+            "status": "unknown",
+            "source_turn": null
+          }
+        }
+      },
+      {
+        "message": "for investment",
+        "expect_route": "alternative",
+        "expect_escalation": false,
+        "expect_option_cells": [
+          [
+            "A",
+            5.0
+          ]
+        ],
+        "expect_unmet_demand": true,
+        "expect_fields": {
+          "size": {
+            "value": 5.0,
+            "status": "stated",
+            "source_turn": 2
+          },
+          "block": {
+            "value": "C",
+            "status": "stated",
+            "source_turn": 3
+          },
+          "budget": {
+            "value": {
+              "max_pkr": 8000000,
+              "min_pkr": 8000000
+            },
+            "status": "stated",
+            "source_turn": 4
+          },
+          "purpose": {
+            "value": "investment",
+            "status": "stated",
+            "source_turn": 5
+          },
+          "timeline": {
+            "value": null,
+            "status": "unknown",
+            "source_turn": null
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "02_mid_conversation_correction",
+    "description": "The dealer corrects the budget mid-conversation.",
+    "turns": [
+      {
+        "message": "I want a 7 marla plot in Block C",
+        "expect_route": "exact",
+        "expect_escalation": false,
+        "expect_option_cells": [
+          [
+            "C",
+            7.0
+          ]
+        ],
+        "expect_unmet_demand": false,
+        "expect_fields": {
+          "size": {
+            "value": 7.0,
+            "status": "stated",
+            "source_turn": 1
+          },
+          "block": {
+            "value": "C",
+            "status": "stated",
+            "source_turn": 1
+          },
+          "budget": {
+            "value": null,
+            "status": "unknown",
+            "source_turn": null
+          },
+          "purpose": {
+            "value": null,
+            "status": "unknown",
+            "source_turn": null
+          },
+          "timeline": {
+            "value": null,
+            "status": "unknown",
+            "source_turn": null
+          }
+        }
+      },
+      {
+        "message": "my budget is 8 million",
+        "expect_route": "exact",
+        "expect_escalation": false,
+        "expect_option_cells": [
+          [
+            "C",
+            7.0
+          ]
+        ],
+        "expect_unmet_demand": false,
+        "expect_fields": {
+          "size": {
+            "value": 7.0,
+            "status": "stated",
+            "source_turn": 1
+          },
+          "block": {
+            "value": "C",
+            "status": "stated",
+            "source_turn": 1
+          },
+          "budget": {
+            "value": {
+              "min_pkr": 8000000,
+              "max_pkr": 8000000
+            },
+            "status": "stated",
+            "source_turn": 2
+          },
+          "purpose": {
+            "value": null,
+            "status": "unknown",
+            "source_turn": null
+          },
+          "timeline": {
+            "value": null,
+            "status": "unknown",
+            "source_turn": null
+          }
+        }
+      },
+      {
+        "message": "actually my budget is 12 million",
+        "expect_route": "alternative",
+        "expect_escalation": false,
+        "expect_option_cells": [
+          [
+            "A",
+            7.0
+          ]
+        ],
+        "expect_unmet_demand": true,
+        "expect_fields": {
+          "size": {
+            "value": 7.0,
+            "status": "stated",
+            "source_turn": 1
+          },
+          "block": {
+            "value": "C",
+            "status": "stated",
+            "source_turn": 1
+          },
+          "budget": {
+            "value": {
+              "min_pkr": 12000000,
+              "max_pkr": 12000000
+            },
+            "status": "corrected",
+            "source_turn": 3
+          },
+          "purpose": {
+            "value": null,
+            "status": "unknown",
+            "source_turn": null
+          },
+          "timeline": {
+            "value": null,
+            "status": "unknown",
+            "source_turn": null
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "03_thin_cell_a14",
+    "description": "Thin cell A/14 marla (2 listings): no price statistics.",
+    "turns": [
+      {
+        "message": "What is the price of a 14 marla plot in Block A?",
+        "expect_route": "alternative",
+        "expect_escalation": false,
+        "expect_option_cells": [
+          [
+            "A",
+            7.0
+          ],
+          [
+            "A",
+            5.0
+          ],
+          [
+            "B",
+            14.0
+          ]
+        ],
+        "expect_unmet_demand": true,
+        "expect_fields": {
+          "size": {
+            "value": 14.0,
+            "status": "stated",
+            "source_turn": 1
+          },
+          "block": {
+            "value": "A",
+            "status": "stated",
+            "source_turn": 1
+          },
+          "budget": {
+            "value": null,
+            "status": "unknown",
+            "source_turn": null
+          },
+          "purpose": {
+            "value": null,
+            "status": "unknown",
+            "source_turn": null
+          },
+          "timeline": {
+            "value": null,
+            "status": "unknown",
+            "source_turn": null
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "04_thin_cell_b7",
+    "description": "Thin cell B/7 marla (2 listings): no price statistics.",
+    "turns": [
+      {
+        "message": "What is the price of a 7 marla plot in Block B?",
+        "expect_route": "alternative",
+        "expect_escalation": false,
+        "expect_option_cells": [
+          [
+            "B",
+            5.0
+          ],
+          [
+            "A",
+            7.0
+          ],
+          [
+            "C",
+            7.0
+          ]
+        ],
+        "expect_unmet_demand": true,
+        "expect_fields": {
+          "size": {
+            "value": 7.0,
+            "status": "stated",
+            "source_turn": 1
+          },
+          "block": {
+            "value": "B",
+            "status": "stated",
+            "source_turn": 1
+          },
+          "budget": {
+            "value": null,
+            "status": "unknown",
+            "source_turn": null
+          },
+          "purpose": {
+            "value": null,
+            "status": "unknown",
+            "source_turn": null
+          },
+          "timeline": {
+            "value": null,
+            "status": "unknown",
+            "source_turn": null
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "05_thin_cell_c10",
+    "description": "Thin cell C/10 marla (2 listings): no price statistics.",
+    "turns": [
+      {
+        "message": "What is the price of a 10 marla plot in Block C?",
+        "expect_route": "alternative",
+        "expect_escalation": false,
+        "expect_option_cells": [
+          [
+            "C",
+            7.0
+          ],
+          [
+            "B",
+            10.0
+          ],
+          [
+            "A",
+            10.0
+          ]
+        ],
+        "expect_unmet_demand": true,
+        "expect_fields": {
+          "size": {
+            "value": 10.0,
+            "status": "stated",
+            "source_turn": 1
+          },
+          "block": {
+            "value": "C",
+            "status": "stated",
+            "source_turn": 1
+          },
+          "budget": {
+            "value": null,
+            "status": "unknown",
+            "source_turn": null
+          },
+          "purpose": {
+            "value": null,
+            "status": "unknown",
+            "source_turn": null
+          },
+          "timeline": {
+            "value": null,
+            "status": "unknown",
+            "source_turn": null
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "06_out_of_scope_block_d",
+    "description": "Block D is parked: the policy escalates.",
+    "turns": [
+      {
+        "message": "I want a 10 marla plot in Block D",
+        "expect_route": "escalate",
+        "expect_escalation": true,
+        "expect_option_cells": [],
+        "expect_unmet_demand": true,
+        "expect_fields": {
+          "size": {
+            "value": 10.0,
+            "status": "stated",
+            "source_turn": 1
+          },
+          "block": {
+            "value": "D",
+            "status": "stated",
+            "source_turn": 1
+          },
+          "budget": {
+            "value": null,
+            "status": "unknown",
+            "source_turn": null
+          },
+          "purpose": {
+            "value": null,
+            "status": "unknown",
+            "source_turn": null
+          },
+          "timeline": {
+            "value": null,
+            "status": "unknown",
+            "source_turn": null
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "07_discount_request",
+    "description": "A discount ask: the policy escalates.",
+    "turns": [
+      {
+        "message": "What is the price of a 5 marla plot in Block C? Can you give me 20% discount?",
+        "expect_route": "escalate",
+        "expect_escalation": true,
+        "expect_option_cells": [],
+        "expect_unmet_demand": true,
+        "expect_fields": {
+          "size": {
+            "value": 5.0,
+            "status": "stated",
+            "source_turn": 1
+          },
+          "block": {
+            "value": "C",
+            "status": "stated",
+            "source_turn": 1
+          },
+          "budget": {
+            "value": null,
+            "status": "unknown",
+            "source_turn": null
+          },
+          "purpose": {
+            "value": null,
+            "status": "unknown",
+            "source_turn": null
+          },
+          "timeline": {
+            "value": null,
+            "status": "unknown",
+            "source_turn": null
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "08_booking_request",
+    "description": "A booking / token payment: the policy escalates.",
+    "turns": [
+      {
+        "message": "What is the price of a 7 marla plot in Block C? I want to book it and pay the token today.",
+        "expect_route": "escalate",
+        "expect_escalation": true,
+        "expect_option_cells": [],
+        "expect_unmet_demand": true,
+        "expect_fields": {
+          "size": {
+            "value": 7.0,
+            "status": "stated",
+            "source_turn": 1
+          },
+          "block": {
+            "value": "C",
+            "status": "stated",
+            "source_turn": 1
+          },
+          "budget": {
+            "value": null,
+            "status": "unknown",
+            "source_turn": null
+          },
+          "purpose": {
+            "value": null,
+            "status": "unknown",
+            "source_turn": null
+          },
+          "timeline": {
+            "value": null,
+            "status": "unknown",
+            "source_turn": null
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "09_roman_urdu_amount",
+    "description": "Roman Urdu: 80 lakh is read as 8,000,000.",
+    "turns": [
+      {
+        "message": "Block C me 7 marla ka plot chahiye",
+        "expect_route": "exact",
+        "expect_escalation": false,
+        "expect_option_cells": [
+          [
+            "C",
+            7.0
+          ]
+        ],
+        "expect_unmet_demand": false,
+        "expect_fields": {
+          "size": {
+            "value": 7.0,
+            "status": "stated",
+            "source_turn": 1
+          },
+          "block": {
+            "value": "C",
+            "status": "stated",
+            "source_turn": 1
+          },
+          "budget": {
+            "value": null,
+            "status": "unknown",
+            "source_turn": null
+          },
+          "purpose": {
+            "value": null,
+            "status": "unknown",
+            "source_turn": null
+          },
+          "timeline": {
+            "value": null,
+            "status": "unknown",
+            "source_turn": null
+          }
+        }
+      },
+      {
+        "message": "budget 80 lakh hai",
+        "expect_route": "exact",
+        "expect_escalation": false,
+        "expect_option_cells": [
+          [
+            "C",
+            7.0
+          ]
+        ],
+        "expect_unmet_demand": false,
+        "expect_fields": {
+          "size": {
+            "value": 7.0,
+            "status": "stated",
+            "source_turn": 1
+          },
+          "block": {
+            "value": "C",
+            "status": "stated",
+            "source_turn": 1
+          },
+          "budget": {
+            "value": {
+              "min_pkr": 8000000,
+              "max_pkr": 8000000
+            },
+            "status": "stated",
+            "source_turn": 2
+          },
+          "purpose": {
+            "value": null,
+            "status": "unknown",
+            "source_turn": null
+          },
+          "timeline": {
+            "value": null,
+            "status": "unknown",
+            "source_turn": null
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "10_no_match",
+    "description": "A size that no cell carries: the nearest verified cells.",
+    "turns": [
+      {
+        "message": "I need a 3 marla plot in Block C for my family",
+        "expect_route": "alternative",
+        "expect_escalation": false,
+        "expect_option_cells": [
+          [
+            "C",
+            5.0
+          ],
+          [
+            "C",
+            7.0
+          ],
+          [
+            "C",
+            20.0
+          ]
+        ],
+        "expect_unmet_demand": true,
+        "expect_fields": {
+          "size": {
+            "value": 3.0,
+            "status": "stated",
+            "source_turn": 1
+          },
+          "block": {
+            "value": "C",
+            "status": "stated",
+            "source_turn": 1
+          },
+          "budget": {
+            "value": null,
+            "status": "unknown",
+            "source_turn": null
+          },
+          "purpose": {
+            "value": null,
+            "status": "unknown",
+            "source_turn": null
+          },
+          "timeline": {
+            "value": null,
+            "status": "unknown",
+            "source_turn": null
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "11_investment_timeline",
+    "description": "Purpose is stated; the timeline stays unknown.",
+    "turns": [
+      {
+        "message": "I am looking for a 10 marla plot in Block A for investment, within 2 months",
+        "expect_route": "exact",
+        "expect_escalation": false,
+        "expect_option_cells": [
+          [
+            "A",
+            10.0
+          ]
+        ],
+        "expect_unmet_demand": false,
+        "expect_fields": {
+          "size": {
+            "value": 10.0,
+            "status": "stated",
+            "source_turn": 1
+          },
+          "block": {
+            "value": "A",
+            "status": "stated",
+            "source_turn": 1
+          },
+          "budget": {
+            "value": null,
+            "status": "unknown",
+            "source_turn": null
+          },
+          "purpose": {
+            "value": "investment",
+            "status": "stated",
+            "source_turn": 1
+          },
+          "timeline": {
+            "value": null,
+            "status": "unknown",
+            "source_turn": null
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "12_purpose_shop",
+    "description": "A commercial purpose is stated.",
+    "turns": [
+      {
+        "message": "I need a 5 marla plot in Block B for a shop",
+        "expect_route": "exact",
+        "expect_escalation": false,
+        "expect_option_cells": [
+          [
+            "B",
+            5.0
+          ]
+        ],
+        "expect_unmet_demand": false,
+        "expect_fields": {
+          "size": {
+            "value": 5.0,
+            "status": "stated",
+            "source_turn": 1
+          },
+          "block": {
+            "value": "B",
+            "status": "stated",
+            "source_turn": 1
+          },
+          "budget": {
+            "value": null,
+            "status": "unknown",
+            "source_turn": null
+          },
+          "purpose": {
+            "value": "commercial",
+            "status": "stated",
+            "source_turn": 1
+          },
+          "timeline": {
+            "value": null,
+            "status": "unknown",
+            "source_turn": null
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "13_executive_block_parked",
+    "description": "The Executive block is parked: the policy escalates.",
+    "turns": [
+      {
+        "message": "What is the price of a 5 marla plot in the Executive Block?",
+        "expect_route": "escalate",
+        "expect_escalation": true,
+        "expect_option_cells": [],
+        "expect_unmet_demand": true,
+        "expect_fields": {
+          "size": {
+            "value": 5.0,
+            "status": "stated",
+            "source_turn": 1
+          },
+          "block": {
+            "value": "E",
+            "status": "stated",
+            "source_turn": 1
+          },
+          "budget": {
+            "value": null,
+            "status": "unknown",
+            "source_turn": null
+          },
+          "purpose": {
+            "value": null,
+            "status": "unknown",
+            "source_turn": null
+          },
+          "timeline": {
+            "value": null,
+            "status": "unknown",
+            "source_turn": null
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "14_availability_request",
+    "description": "An availability claim: the policy escalates.",
+    "turns": [
+      {
+        "message": "Do you have a 5 marla plot available in Block B right now?",
+        "expect_route": "escalate",
+        "expect_escalation": true,
+        "expect_option_cells": [],
+        "expect_unmet_demand": true,
+        "expect_fields": {
+          "size": {
+            "value": 5.0,
+            "status": "stated",
+            "source_turn": 1
+          },
+          "block": {
+            "value": "B",
+            "status": "stated",
+            "source_turn": 1
+          },
+          "budget": {
+            "value": null,
+            "status": "unknown",
+            "source_turn": null
+          },
+          "purpose": {
+            "value": null,
+            "status": "unknown",
+            "source_turn": null
+          },
+          "timeline": {
+            "value": "immediate",
+            "status": "stated",
+            "source_turn": 1
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "15_lakh_crore_marla_typo",
+    "description": "Roman Urdu, a crore and a typo'd block name.",
+    "turns": [
+      {
+        "message": "blk C",
+        "expect_route": "alternative",
+        "expect_escalation": false,
+        "expect_option_cells": [
+          [
+            "C",
+            5.0
+          ],
+          [
+            "C",
+            7.0
+          ],
+          [
+            "C",
+            20.0
+          ]
+        ],
+        "expect_unmet_demand": true,
+        "expect_fields": {
+          "size": {
+            "value": null,
+            "status": "unknown",
+            "source_turn": null
+          },
+          "block": {
+            "value": "C",
+            "status": "stated",
+            "source_turn": 1
+          },
+          "budget": {
+            "value": null,
+            "status": "unknown",
+            "source_turn": null
+          },
+          "purpose": {
+            "value": null,
+            "status": "unknown",
+            "source_turn": null
+          },
+          "timeline": {
+            "value": null,
+            "status": "unknown",
+            "source_turn": null
+          }
+        }
+      },
+      {
+        "message": "5 marla",
+        "expect_route": "exact",
+        "expect_escalation": false,
+        "expect_option_cells": [
+          [
+            "C",
+            5.0
+          ]
+        ],
+        "expect_unmet_demand": false,
+        "expect_fields": {
+          "size": {
+            "value": 5.0,
+            "status": "stated",
+            "source_turn": 2
+          },
+          "block": {
+            "value": "C",
+            "status": "stated",
+            "source_turn": 1
+          },
+          "budget": {
+            "value": null,
+            "status": "unknown",
+            "source_turn": null
+          },
+          "purpose": {
+            "value": null,
+            "status": "unknown",
+            "source_turn": null
+          },
+          "timeline": {
+            "value": null,
+            "status": "unknown",
+            "source_turn": null
+          }
+        }
+      },
+      {
+        "message": "budget 1 crore",
+        "expect_route": "alternative",
+        "expect_escalation": false,
+        "expect_option_cells": [
+          [
+            "A",
+            5.0
+          ]
+        ],
+        "expect_unmet_demand": true,
+        "expect_fields": {
+          "size": {
+            "value": 5.0,
+            "status": "stated",
+            "source_turn": 2
+          },
+          "block": {
+            "value": "C",
+            "status": "stated",
+            "source_turn": 1
+          },
+          "budget": {
+            "value": {
+              "min_pkr": 10000000,
+              "max_pkr": 10000000
+            },
+            "status": "stated",
+            "source_turn": 3
+          },
+          "purpose": {
+            "value": null,
+            "status": "unknown",
+            "source_turn": null
+          },
+          "timeline": {
+            "value": null,
+            "status": "unknown",
+            "source_turn": null
+          }
+        }
+      }
+    ]
+  }
+]

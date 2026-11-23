@@ -1,0 +1,2917 @@
+{
+  "captured_at": "2026-10-22",
+  "server": "uvicorn app.server:app on 127.0.0.1:8099",
+  "calls": [
+    {
+      "method": "POST",
+      "url": "http://127.0.0.1:8099/api/conversation?message=I+need+a+plot&session_id=m12-probe-session",
+      "request_body": null,
+      "status": 200,
+      "response": {
+        "session_id": "m12-probe-session",
+        "turn": 1,
+        "reply": "Thank you for your message. We will get back to you shortly.",
+        "lead_state": {
+          "fields": {
+            "size": {
+              "value": null,
+              "status": "unknown",
+              "source_turn": null
+            },
+            "block": {
+              "value": null,
+              "status": "unknown",
+              "source_turn": null
+            },
+            "budget": {
+              "value": null,
+              "status": "unknown",
+              "source_turn": null
+            },
+            "purpose": {
+              "value": null,
+              "status": "unknown",
+              "source_turn": null
+            },
+            "timeline": {
+              "value": null,
+              "status": "unknown",
+              "source_turn": null
+            }
+          },
+          "turn": 1,
+          "changes": []
+        },
+        "route": "clarify",
+        "reason": "the application has no verified answer for this request yet",
+        "escalation": false,
+        "verified_options": [],
+        "next_action": {
+          "action": "ask_clarifying_question",
+          "label": "Ask the dealer for: size, block, budget, purpose, timeline.",
+          "reason": "the application has no verified answer and the conversation is still missing a requirement",
+          "requires_human_approval": true
+        },
+        "unmet_demand": null,
+        "changes": [],
+        "normalized": {
+          "text": "I need a plot",
+          "changes": []
+        },
+        "policy": {
+          "action": "answer",
+          "reasons": []
+        },
+        "gates": {
+          "traceability_ok": true,
+          "claim_guard_ok": true
+        },
+        "taken_over_at": null
+      },
+      "response_text": null,
+      "label": "turn 1: I need a plot"
+    },
+    {
+      "method": "POST",
+      "url": "http://127.0.0.1:8099/api/conversation?message=5+marla&session_id=m12-probe-session",
+      "request_body": null,
+      "status": 200,
+      "response": {
+        "session_id": "m12-probe-session",
+        "turn": 2,
+        "reply": "Based on 97 matching listings and 259 recorded observations in the current partial Faisal Hills market data, the asking-price range is PKR 3,950,000 to PKR 12,200,000, with a median of PKR 5,800,000. Latest observation date: 2026-10-07. These are dealer asking prices, not confirmed sold prices. Human approval is required before sending.",
+        "lead_state": {
+          "fields": {
+            "size": {
+              "value": 5.0,
+              "status": "stated",
+              "source_turn": 2
+            },
+            "block": {
+              "value": null,
+              "status": "unknown",
+              "source_turn": null
+            },
+            "budget": {
+              "value": null,
+              "status": "unknown",
+              "source_turn": null
+            },
+            "purpose": {
+              "value": null,
+              "status": "unknown",
+              "source_turn": null
+            },
+            "timeline": {
+              "value": null,
+              "status": "unknown",
+              "source_turn": null
+            }
+          },
+          "turn": 2,
+          "changes": []
+        },
+        "route": "alternative",
+        "reason": "the request is covered by verified alternatives that satisfy the stated requirements",
+        "escalation": false,
+        "verified_options": [
+          {
+            "block": "A",
+            "size_marla": 5.0,
+            "reason": [
+              "the requested 5 marla",
+              "21 verified listings with 27 observations"
+            ],
+            "verified": true
+          },
+          {
+            "block": "B",
+            "size_marla": 5.0,
+            "reason": [
+              "the requested 5 marla",
+              "29 verified listings with 86 observations"
+            ],
+            "verified": true
+          },
+          {
+            "block": "C",
+            "size_marla": 5.0,
+            "reason": [
+              "the requested 5 marla",
+              "47 verified listings with 146 observations"
+            ],
+            "verified": true
+          }
+        ],
+        "next_action": {
+          "action": "offer_verified_alternatives",
+          "label": "Offer the verified alternatives: 5 marla in Block A.",
+          "reason": "the request is covered by verified alternatives that satisfy the stated requirements",
+          "requires_human_approval": true
+        },
+        "unmet_demand": {
+          "size_marla": 5.0,
+          "block": null,
+          "budget_band": null,
+          "route": "alternative"
+        },
+        "changes": [],
+        "normalized": {
+          "text": "5 marla",
+          "changes": []
+        },
+        "policy": {
+          "action": "answer",
+          "reasons": []
+        },
+        "gates": {
+          "traceability_ok": true,
+          "claim_guard_ok": true
+        },
+        "taken_over_at": null
+      },
+      "response_text": null,
+      "label": "turn 2: 5 marla"
+    },
+    {
+      "method": "POST",
+      "url": "http://127.0.0.1:8099/api/conversation?message=blk+C&session_id=m12-probe-session",
+      "request_body": null,
+      "status": 200,
+      "response": {
+        "session_id": "m12-probe-session",
+        "turn": 3,
+        "reply": "Based on 47 matching listings and 146 recorded observations in the current partial Faisal Hills market data, the asking-price range is PKR 3,950,000 to PKR 6,800,000, with a median of PKR 5,600,000. Latest observation date: 2026-10-07. These are dealer asking prices, not confirmed sold prices. Human approval is required before sending.",
+        "lead_state": {
+          "fields": {
+            "size": {
+              "value": 5.0,
+              "status": "stated",
+              "source_turn": 2
+            },
+            "block": {
+              "value": "C",
+              "status": "stated",
+              "source_turn": 3
+            },
+            "budget": {
+              "value": null,
+              "status": "unknown",
+              "source_turn": null
+            },
+            "purpose": {
+              "value": null,
+              "status": "unknown",
+              "source_turn": null
+            },
+            "timeline": {
+              "value": null,
+              "status": "unknown",
+              "source_turn": null
+            }
+          },
+          "turn": 3,
+          "changes": []
+        },
+        "route": "exact",
+        "reason": "the requested cell clears the evidence threshold and satisfies the stated requirements",
+        "escalation": false,
+        "verified_options": [
+          {
+            "block": "C",
+            "size_marla": 5.0,
+            "reason": [
+              "the requested cell clears the evidence threshold and satisfies the stated requirements"
+            ],
+            "verified": true
+          }
+        ],
+        "next_action": {
+          "action": "quote_exact_match",
+          "label": "Answer with the verified price for the requested cell.",
+          "reason": "the requested cell clears the evidence threshold and satisfies the stated requirements",
+          "requires_human_approval": true
+        },
+        "unmet_demand": null,
+        "changes": [],
+        "normalized": {
+          "text": "block C",
+          "changes": [
+            {
+              "kind": "typo",
+              "before": "blk C",
+              "after": "block C"
+            }
+          ]
+        },
+        "policy": {
+          "action": "answer",
+          "reasons": []
+        },
+        "gates": {
+          "traceability_ok": true,
+          "claim_guard_ok": true
+        },
+        "taken_over_at": null
+      },
+      "response_text": null,
+      "label": "turn 3: blk C"
+    },
+    {
+      "method": "POST",
+      "url": "http://127.0.0.1:8099/api/conversation?message=around+80+lakh&session_id=m12-probe-session",
+      "request_body": null,
+      "status": 200,
+      "response": {
+        "session_id": "m12-probe-session",
+        "turn": 4,
+        "reply": "I need to confirm the current market information with our team before giving you a price. Other verified alternatives with more data are a 5 marla plot in Block A. Tell me your preferred size or block and I can narrow them down.",
+        "lead_state": {
+          "fields": {
+            "size": {
+              "value": 5.0,
+              "status": "stated",
+              "source_turn": 2
+            },
+            "block": {
+              "value": "C",
+              "status": "stated",
+              "source_turn": 3
+            },
+            "budget": {
+              "value": {
+                "min_pkr": 8000000,
+                "max_pkr": 8000000
+              },
+              "status": "stated",
+              "source_turn": 4
+            },
+            "purpose": {
+              "value": null,
+              "status": "unknown",
+              "source_turn": null
+            },
+            "timeline": {
+              "value": null,
+              "status": "unknown",
+              "source_turn": null
+            }
+          },
+          "turn": 4,
+          "changes": []
+        },
+        "route": "alternative",
+        "reason": "the request is covered by verified alternatives that satisfy the stated requirements",
+        "escalation": false,
+        "verified_options": [
+          {
+            "block": "A",
+            "size_marla": 5.0,
+            "reason": [
+              "the requested 5 marla",
+              "the nearest size in another active block",
+              "21 verified listings with 27 observations"
+            ],
+            "verified": true
+          }
+        ],
+        "next_action": {
+          "action": "offer_verified_alternatives",
+          "label": "Offer the verified alternatives: 5 marla in Block A.",
+          "reason": "the request is covered by verified alternatives that satisfy the stated requirements",
+          "requires_human_approval": true
+        },
+        "unmet_demand": {
+          "size_marla": 5.0,
+          "block": "C",
+          "budget_band": "5M-10M",
+          "route": "alternative"
+        },
+        "changes": [],
+        "normalized": {
+          "text": "around 80 lakh",
+          "changes": []
+        },
+        "policy": {
+          "action": "answer",
+          "reasons": []
+        },
+        "gates": {
+          "traceability_ok": true,
+          "claim_guard_ok": true
+        },
+        "taken_over_at": null
+      },
+      "response_text": null,
+      "label": "turn 4: around 80 lakh"
+    },
+    {
+      "method": "POST",
+      "url": "http://127.0.0.1:8099/api/conversation?message=for+investment&session_id=m12-probe-session",
+      "request_body": null,
+      "status": 200,
+      "response": {
+        "session_id": "m12-probe-session",
+        "turn": 5,
+        "reply": "I need to confirm the current market information with our team before giving you a price. Other verified alternatives with more data are a 5 marla plot in Block A. Tell me your preferred size or block and I can narrow them down.",
+        "lead_state": {
+          "fields": {
+            "size": {
+              "value": 5.0,
+              "status": "stated",
+              "source_turn": 2
+            },
+            "block": {
+              "value": "C",
+              "status": "stated",
+              "source_turn": 3
+            },
+            "budget": {
+              "value": {
+                "max_pkr": 8000000,
+                "min_pkr": 8000000
+              },
+              "status": "stated",
+              "source_turn": 4
+            },
+            "purpose": {
+              "value": "investment",
+              "status": "stated",
+              "source_turn": 5
+            },
+            "timeline": {
+              "value": null,
+              "status": "unknown",
+              "source_turn": null
+            }
+          },
+          "turn": 5,
+          "changes": []
+        },
+        "route": "alternative",
+        "reason": "the request is covered by verified alternatives that satisfy the stated requirements",
+        "escalation": false,
+        "verified_options": [
+          {
+            "block": "A",
+            "size_marla": 5.0,
+            "reason": [
+              "the requested 5 marla",
+              "the nearest size in another active block",
+              "21 verified listings with 27 observations"
+            ],
+            "verified": true
+          }
+        ],
+        "next_action": {
+          "action": "offer_verified_alternatives",
+          "label": "Offer the verified alternatives: 5 marla in Block A.",
+          "reason": "the request is covered by verified alternatives that satisfy the stated requirements",
+          "requires_human_approval": true
+        },
+        "unmet_demand": {
+          "size_marla": 5.0,
+          "block": "C",
+          "budget_band": "5M-10M",
+          "route": "alternative"
+        },
+        "changes": [],
+        "normalized": {
+          "text": "for investment",
+          "changes": []
+        },
+        "policy": {
+          "action": "answer",
+          "reasons": []
+        },
+        "gates": {
+          "traceability_ok": true,
+          "claim_guard_ok": true
+        },
+        "taken_over_at": null
+      },
+      "response_text": null,
+      "label": "turn 5: for investment"
+    },
+    {
+      "method": "POST",
+      "url": "http://127.0.0.1:8099/api/conversation?message=any+discount%3F&session_id=m12-probe-session",
+      "request_body": null,
+      "status": 200,
+      "response": {
+        "session_id": "m12-probe-session",
+        "turn": 6,
+        "reply": "Thank you for your message. A member of our team will review it and reply personally.",
+        "lead_state": {
+          "fields": {
+            "size": {
+              "value": 5.0,
+              "status": "stated",
+              "source_turn": 2
+            },
+            "block": {
+              "value": "C",
+              "status": "stated",
+              "source_turn": 3
+            },
+            "budget": {
+              "value": {
+                "max_pkr": 8000000,
+                "min_pkr": 8000000
+              },
+              "status": "stated",
+              "source_turn": 4
+            },
+            "purpose": {
+              "value": "investment",
+              "status": "stated",
+              "source_turn": 5
+            },
+            "timeline": {
+              "value": null,
+              "status": "unknown",
+              "source_turn": null
+            }
+          },
+          "turn": 6,
+          "changes": []
+        },
+        "route": "escalate",
+        "reason": "Involves price discount, negotiation, or commission discussion.",
+        "escalation": true,
+        "verified_options": [],
+        "next_action": {
+          "action": "ask_clarifying_question",
+          "label": "Ask the dealer for: timeline.",
+          "reason": "the application has no verified answer and the conversation is still missing a requirement",
+          "requires_human_approval": true
+        },
+        "unmet_demand": {
+          "size_marla": 5.0,
+          "block": "C",
+          "budget_band": "5M-10M",
+          "route": "escalate"
+        },
+        "changes": [],
+        "normalized": {
+          "text": "any discount?",
+          "changes": []
+        },
+        "policy": {
+          "action": "escalate",
+          "reasons": [
+            "Involves price discount, negotiation, or commission discussion."
+          ]
+        },
+        "gates": {
+          "traceability_ok": true,
+          "claim_guard_ok": true
+        },
+        "taken_over_at": null
+      },
+      "response_text": null,
+      "label": "turn 6: any discount?"
+    },
+    {
+      "method": "POST",
+      "url": "http://127.0.0.1:8099/api/conversation?message=10+marla+C+block+price&session_id=m12-probe-session",
+      "request_body": null,
+      "status": 200,
+      "response": {
+        "session_id": "m12-probe-session",
+        "turn": 7,
+        "reply": "I need to confirm the current market information with our team before giving you a price. The closest match with more data is a 7 marla plot in Block C.",
+        "lead_state": {
+          "fields": {
+            "size": {
+              "value": 10.0,
+              "status": "corrected",
+              "source_turn": 7
+            },
+            "block": {
+              "value": "C",
+              "status": "stated",
+              "source_turn": 7
+            },
+            "budget": {
+              "value": {
+                "max_pkr": 8000000,
+                "min_pkr": 8000000
+              },
+              "status": "stated",
+              "source_turn": 4
+            },
+            "purpose": {
+              "value": "investment",
+              "status": "stated",
+              "source_turn": 5
+            },
+            "timeline": {
+              "value": null,
+              "status": "unknown",
+              "source_turn": null
+            }
+          },
+          "turn": 7,
+          "changes": [
+            {
+              "field": "size",
+              "old": 5.0,
+              "new": 10.0,
+              "turn": 7
+            }
+          ]
+        },
+        "route": "alternative",
+        "reason": "the request is covered by verified alternatives that satisfy the stated requirements",
+        "escalation": false,
+        "verified_options": [
+          {
+            "block": "C",
+            "size_marla": 7.0,
+            "reason": [
+              "7 marla, closest available size to the 10 marla requested",
+              "in the requested Block C",
+              "21 verified listings with 43 observations"
+            ],
+            "verified": true
+          }
+        ],
+        "next_action": {
+          "action": "offer_verified_alternatives",
+          "label": "Offer the verified alternatives: 7 marla in Block C.",
+          "reason": "the request is covered by verified alternatives that satisfy the stated requirements",
+          "requires_human_approval": true
+        },
+        "unmet_demand": {
+          "size_marla": 10.0,
+          "block": "C",
+          "budget_band": "5M-10M",
+          "route": "alternative"
+        },
+        "changes": [
+          {
+            "field": "size",
+            "old": 5.0,
+            "new": 10.0,
+            "turn": 7
+          }
+        ],
+        "normalized": {
+          "text": "10 marla C block price",
+          "changes": []
+        },
+        "policy": {
+          "action": "answer",
+          "reasons": []
+        },
+        "gates": {
+          "traceability_ok": true,
+          "claim_guard_ok": true
+        },
+        "taken_over_at": null
+      },
+      "response_text": null,
+      "label": "turn 7: 10 marla C block price"
+    },
+    {
+      "method": "POST",
+      "url": "http://127.0.0.1:8099/api/conversation?message=is+Block+D+available%3F&session_id=m12-probe-session",
+      "request_body": null,
+      "status": 200,
+      "response": {
+        "session_id": "m12-probe-session",
+        "turn": 8,
+        "reply": "Thank you for your message. A member of our team will review it and reply personally.",
+        "lead_state": {
+          "fields": {
+            "size": {
+              "value": 10.0,
+              "status": "corrected",
+              "source_turn": 7
+            },
+            "block": {
+              "value": "D",
+              "status": "corrected",
+              "source_turn": 8
+            },
+            "budget": {
+              "value": {
+                "max_pkr": 8000000,
+                "min_pkr": 8000000
+              },
+              "status": "stated",
+              "source_turn": 4
+            },
+            "purpose": {
+              "value": "investment",
+              "status": "stated",
+              "source_turn": 5
+            },
+            "timeline": {
+              "value": null,
+              "status": "unknown",
+              "source_turn": null
+            }
+          },
+          "turn": 8,
+          "changes": [
+            {
+              "field": "size",
+              "new": 10.0,
+              "old": 5.0,
+              "turn": 7
+            },
+            {
+              "field": "block",
+              "old": "C",
+              "new": "D",
+              "turn": 8
+            }
+          ]
+        },
+        "route": "escalate",
+        "reason": "Refers to a block outside the approved scope (Blocks A, B, C only).",
+        "escalation": true,
+        "verified_options": [],
+        "next_action": {
+          "action": "ask_clarifying_question",
+          "label": "Ask the dealer for: timeline.",
+          "reason": "the application has no verified answer and the conversation is still missing a requirement",
+          "requires_human_approval": true
+        },
+        "unmet_demand": {
+          "size_marla": 10.0,
+          "block": "D",
+          "budget_band": "5M-10M",
+          "route": "escalate"
+        },
+        "changes": [
+          {
+            "field": "size",
+            "new": 10.0,
+            "old": 5.0,
+            "turn": 7
+          },
+          {
+            "field": "block",
+            "old": "C",
+            "new": "D",
+            "turn": 8
+          }
+        ],
+        "normalized": {
+          "text": "is Block D available?",
+          "changes": []
+        },
+        "policy": {
+          "action": "escalate",
+          "reasons": [
+            "Refers to a block outside the approved scope (Blocks A, B, C only)."
+          ]
+        },
+        "gates": {
+          "traceability_ok": true,
+          "claim_guard_ok": true
+        },
+        "taken_over_at": null
+      },
+      "response_text": null,
+      "label": "turn 8: is Block D available?"
+    },
+    {
+      "method": "POST",
+      "url": "http://127.0.0.1:8099/api/conversation?message=give+me+the+owner%27s+number&session_id=m12-probe-session",
+      "request_body": null,
+      "status": 200,
+      "response": {
+        "session_id": "m12-probe-session",
+        "turn": 9,
+        "reply": "Thank you for your message. We will get back to you shortly.",
+        "lead_state": {
+          "fields": {
+            "size": {
+              "value": 10.0,
+              "status": "corrected",
+              "source_turn": 7
+            },
+            "block": {
+              "value": "D",
+              "status": "corrected",
+              "source_turn": 8
+            },
+            "budget": {
+              "value": {
+                "max_pkr": 8000000,
+                "min_pkr": 8000000
+              },
+              "status": "stated",
+              "source_turn": 4
+            },
+            "purpose": {
+              "value": "investment",
+              "status": "stated",
+              "source_turn": 5
+            },
+            "timeline": {
+              "value": null,
+              "status": "unknown",
+              "source_turn": null
+            }
+          },
+          "turn": 9,
+          "changes": [
+            {
+              "field": "size",
+              "new": 10.0,
+              "old": 5.0,
+              "turn": 7
+            },
+            {
+              "field": "block",
+              "new": "D",
+              "old": "C",
+              "turn": 8
+            }
+          ]
+        },
+        "route": "clarify",
+        "reason": "the application has no verified answer for this request yet",
+        "escalation": false,
+        "verified_options": [],
+        "next_action": {
+          "action": "ask_clarifying_question",
+          "label": "Ask the dealer for: timeline.",
+          "reason": "the application has no verified answer and the conversation is still missing a requirement",
+          "requires_human_approval": true
+        },
+        "unmet_demand": {
+          "size_marla": 10.0,
+          "block": "D",
+          "budget_band": "5M-10M",
+          "route": "clarify"
+        },
+        "changes": [
+          {
+            "field": "size",
+            "new": 10.0,
+            "old": 5.0,
+            "turn": 7
+          },
+          {
+            "field": "block",
+            "new": "D",
+            "old": "C",
+            "turn": 8
+          }
+        ],
+        "normalized": {
+          "text": "give me the owner's number",
+          "changes": []
+        },
+        "policy": {
+          "action": "answer",
+          "reasons": []
+        },
+        "gates": {
+          "traceability_ok": true,
+          "claim_guard_ok": true
+        },
+        "taken_over_at": null
+      },
+      "response_text": null,
+      "label": "turn 9: give me the owner's number"
+    },
+    {
+      "method": "POST",
+      "url": "http://127.0.0.1:8099/api/conversation?message=actually+12+million&session_id=m12-probe-session",
+      "request_body": null,
+      "status": 200,
+      "response": {
+        "session_id": "m12-probe-session",
+        "turn": 10,
+        "reply": "Thank you for your message. We will get back to you shortly.",
+        "lead_state": {
+          "fields": {
+            "size": {
+              "value": 10.0,
+              "status": "corrected",
+              "source_turn": 7
+            },
+            "block": {
+              "value": "D",
+              "status": "corrected",
+              "source_turn": 8
+            },
+            "budget": {
+              "value": {
+                "min_pkr": 12000000,
+                "max_pkr": 12000000
+              },
+              "status": "corrected",
+              "source_turn": 10
+            },
+            "purpose": {
+              "value": "investment",
+              "status": "stated",
+              "source_turn": 5
+            },
+            "timeline": {
+              "value": null,
+              "status": "unknown",
+              "source_turn": null
+            }
+          },
+          "turn": 10,
+          "changes": [
+            {
+              "field": "size",
+              "new": 10.0,
+              "old": 5.0,
+              "turn": 7
+            },
+            {
+              "field": "block",
+              "new": "D",
+              "old": "C",
+              "turn": 8
+            },
+            {
+              "field": "budget",
+              "old": {
+                "max_pkr": 8000000,
+                "min_pkr": 8000000
+              },
+              "new": {
+                "min_pkr": 12000000,
+                "max_pkr": 12000000
+              },
+              "turn": 10
+            }
+          ]
+        },
+        "route": "clarify",
+        "reason": "the application has no verified answer for this request yet",
+        "escalation": false,
+        "verified_options": [],
+        "next_action": {
+          "action": "ask_clarifying_question",
+          "label": "Ask the dealer for: timeline.",
+          "reason": "the application has no verified answer and the conversation is still missing a requirement",
+          "requires_human_approval": true
+        },
+        "unmet_demand": {
+          "size_marla": 10.0,
+          "block": "D",
+          "budget_band": "10M-15M",
+          "route": "clarify"
+        },
+        "changes": [
+          {
+            "field": "size",
+            "new": 10.0,
+            "old": 5.0,
+            "turn": 7
+          },
+          {
+            "field": "block",
+            "new": "D",
+            "old": "C",
+            "turn": 8
+          },
+          {
+            "field": "budget",
+            "old": {
+              "max_pkr": 8000000,
+              "min_pkr": 8000000
+            },
+            "new": {
+              "min_pkr": 12000000,
+              "max_pkr": 12000000
+            },
+            "turn": 10
+          }
+        ],
+        "normalized": {
+          "text": "actually 12 million",
+          "changes": []
+        },
+        "policy": {
+          "action": "answer",
+          "reasons": []
+        },
+        "gates": {
+          "traceability_ok": true,
+          "claim_guard_ok": true
+        },
+        "taken_over_at": null
+      },
+      "response_text": null,
+      "label": "turn 10: actually 12 million"
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:8099/api/conversation/m12-probe-session",
+      "request_body": null,
+      "status": 200,
+      "response": {
+        "session_id": "m12-probe-session",
+        "turn": 10,
+        "lead_state": {
+          "fields": {
+            "size": {
+              "value": 10.0,
+              "status": "corrected",
+              "source_turn": 7
+            },
+            "block": {
+              "value": "D",
+              "status": "corrected",
+              "source_turn": 8
+            },
+            "budget": {
+              "value": {
+                "max_pkr": 12000000,
+                "min_pkr": 12000000
+              },
+              "status": "corrected",
+              "source_turn": 10
+            },
+            "purpose": {
+              "value": "investment",
+              "status": "stated",
+              "source_turn": 5
+            },
+            "timeline": {
+              "value": null,
+              "status": "unknown",
+              "source_turn": null
+            }
+          },
+          "turn": 10,
+          "changes": [
+            {
+              "field": "size",
+              "new": 10.0,
+              "old": 5.0,
+              "turn": 7
+            },
+            {
+              "field": "block",
+              "new": "D",
+              "old": "C",
+              "turn": 8
+            },
+            {
+              "field": "budget",
+              "new": {
+                "max_pkr": 12000000,
+                "min_pkr": 12000000
+              },
+              "old": {
+                "max_pkr": 8000000,
+                "min_pkr": 8000000
+              },
+              "turn": 10
+            }
+          ]
+        },
+        "unknowns": [
+          "timeline"
+        ],
+        "corrections": [
+          "size",
+          "block",
+          "budget"
+        ],
+        "taken_over_at": null
+      },
+      "response_text": null,
+      "label": "state endpoint"
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:8099/api/unmet-demand?limit=20",
+      "request_body": null,
+      "status": 200,
+      "response": {
+        "count": 8,
+        "shapes": [
+          {
+            "size_marla": 5.0,
+            "block": "C",
+            "budget_band": "5M-10M",
+            "count": 3
+          },
+          {
+            "size_marla": 10.0,
+            "block": "D",
+            "budget_band": "5M-10M",
+            "count": 2
+          },
+          {
+            "size_marla": 10.0,
+            "block": "D",
+            "budget_band": "10M-15M",
+            "count": 1
+          },
+          {
+            "size_marla": 10.0,
+            "block": "C",
+            "budget_band": "5M-10M",
+            "count": 1
+          },
+          {
+            "size_marla": 5.0,
+            "block": null,
+            "budget_band": null,
+            "count": 1
+          }
+        ]
+      },
+      "response_text": null,
+      "label": "unmet demand endpoint"
+    },
+    {
+      "method": "POST",
+      "url": "http://127.0.0.1:8099/api/conversation/m12-probe-session/take-over?operator=probe",
+      "request_body": null,
+      "status": 200,
+      "response": {
+        "session_id": "m12-probe-session",
+        "taken_over": true,
+        "taken_over_at": "2026-10-22T12:40:37.804431+00:00"
+      },
+      "response_text": null,
+      "label": "take-over endpoint"
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:8099/api/conversation/m12-probe-session",
+      "request_body": null,
+      "status": 200,
+      "response": {
+        "session_id": "m12-probe-session",
+        "turn": 10,
+        "lead_state": {
+          "fields": {
+            "size": {
+              "value": 10.0,
+              "status": "corrected",
+              "source_turn": 7
+            },
+            "block": {
+              "value": "D",
+              "status": "corrected",
+              "source_turn": 8
+            },
+            "budget": {
+              "value": {
+                "max_pkr": 12000000,
+                "min_pkr": 12000000
+              },
+              "status": "corrected",
+              "source_turn": 10
+            },
+            "purpose": {
+              "value": "investment",
+              "status": "stated",
+              "source_turn": 5
+            },
+            "timeline": {
+              "value": null,
+              "status": "unknown",
+              "source_turn": null
+            }
+          },
+          "turn": 10,
+          "changes": [
+            {
+              "field": "size",
+              "new": 10.0,
+              "old": 5.0,
+              "turn": 7
+            },
+            {
+              "field": "block",
+              "new": "D",
+              "old": "C",
+              "turn": 8
+            },
+            {
+              "field": "budget",
+              "new": {
+                "max_pkr": 12000000,
+                "min_pkr": 12000000
+              },
+              "old": {
+                "max_pkr": 8000000,
+                "min_pkr": 8000000
+              },
+              "turn": 10
+            }
+          ]
+        },
+        "unknowns": [
+          "timeline"
+        ],
+        "corrections": [
+          "size",
+          "block",
+          "budget"
+        ],
+        "taken_over_at": "2026-10-22T12:40:37.804431+00:00"
+      },
+      "response_text": null,
+      "label": "state endpoint after take-over"
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:8099/health",
+      "request_body": null,
+      "status": 200,
+      "response": {
+        "status": "ok"
+      },
+      "response_text": null,
+      "label": "health"
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:8099/api/market",
+      "request_body": null,
+      "status": 200,
+      "response": {
+        "source": "FaisalHills verified partial master (read-only)",
+        "price_basis": "dealer asking prices",
+        "is_sold_price": false,
+        "active_blocks": [
+          "A",
+          "B",
+          "C"
+        ],
+        "min_listings_for_answer": 3,
+        "results": [
+          {
+            "block": "A",
+            "size_marla": 5,
+            "matched_plots": 21,
+            "observation_count": 27,
+            "price_min_pkr": 5400000.0,
+            "price_median_pkr": 8400000.0,
+            "price_max_pkr": 12200000.0,
+            "latest_date": "2026-10-07",
+            "coverage_level": "partial",
+            "trust_status": "partial_dataset",
+            "answerable_for_demo": true,
+            "guard": {
+              "ok": true,
+              "action": "allowed",
+              "label": "market",
+              "untraceable": [],
+              "untraceable_count": 0,
+              "numbers_found": 9,
+              "allowed_count": 12,
+              "reason": ""
+            }
+          },
+          {
+            "block": "A",
+            "size_marla": 7,
+            "matched_plots": 10,
+            "observation_count": 15,
+            "price_min_pkr": 6500000.0,
+            "price_median_pkr": 11250000.0,
+            "price_max_pkr": 14200000.0,
+            "latest_date": "2026-10-07",
+            "coverage_level": "partial",
+            "trust_status": "partial_dataset",
+            "answerable_for_demo": true,
+            "guard": {
+              "ok": true,
+              "action": "allowed",
+              "label": "market",
+              "untraceable": [],
+              "untraceable_count": 0,
+              "numbers_found": 9,
+              "allowed_count": 10,
+              "reason": ""
+            }
+          },
+          {
+            "block": "A",
+            "size_marla": 10,
+            "matched_plots": 5,
+            "observation_count": 6,
+            "price_min_pkr": 11500000.0,
+            "price_median_pkr": 14500000.0,
+            "price_max_pkr": 14600000.0,
+            "latest_date": "2026-10-07",
+            "coverage_level": "partial",
+            "trust_status": "partial_dataset",
+            "answerable_for_demo": true,
+            "guard": {
+              "ok": true,
+              "action": "allowed",
+              "label": "market",
+              "untraceable": [],
+              "untraceable_count": 0,
+              "numbers_found": 9,
+              "allowed_count": 10,
+              "reason": ""
+            }
+          },
+          {
+            "block": "A",
+            "size_marla": 14,
+            "matched_plots": 2,
+            "observation_count": 2,
+            "price_min_pkr": null,
+            "price_median_pkr": null,
+            "price_max_pkr": null,
+            "latest_date": "2026-10-05",
+            "coverage_level": "partial",
+            "trust_status": "insufficient_data",
+            "answerable_for_demo": false,
+            "guard": {
+              "ok": true,
+              "action": "allowed",
+              "label": "market",
+              "untraceable": [],
+              "untraceable_count": 0,
+              "numbers_found": 6,
+              "allowed_count": 9,
+              "reason": ""
+            }
+          },
+          {
+            "block": "A",
+            "size_marla": 20,
+            "matched_plots": 4,
+            "observation_count": 4,
+            "price_min_pkr": 18000000.0,
+            "price_median_pkr": 18500000.0,
+            "price_max_pkr": 19000000.0,
+            "latest_date": "2026-10-07",
+            "coverage_level": "partial",
+            "trust_status": "partial_dataset",
+            "answerable_for_demo": true,
+            "guard": {
+              "ok": true,
+              "action": "allowed",
+              "label": "market",
+              "untraceable": [],
+              "untraceable_count": 0,
+              "numbers_found": 9,
+              "allowed_count": 10,
+              "reason": ""
+            }
+          },
+          {
+            "block": "A",
+            "size_marla": 40,
+            "matched_plots": 5,
+            "observation_count": 5,
+            "price_min_pkr": 34500000.0,
+            "price_median_pkr": 35000000.0,
+            "price_max_pkr": 35000000.0,
+            "latest_date": "2026-10-05",
+            "coverage_level": "partial",
+            "trust_status": "partial_dataset",
+            "answerable_for_demo": true,
+            "guard": {
+              "ok": true,
+              "action": "allowed",
+              "label": "market",
+              "untraceable": [],
+              "untraceable_count": 0,
+              "numbers_found": 9,
+              "allowed_count": 9,
+              "reason": ""
+            }
+          },
+          {
+            "block": "B",
+            "size_marla": 5,
+            "matched_plots": 29,
+            "observation_count": 86,
+            "price_min_pkr": 4500000.0,
+            "price_median_pkr": 5400000.0,
+            "price_max_pkr": 6600000.0,
+            "latest_date": "2026-10-07",
+            "coverage_level": "partial",
+            "trust_status": "partial_dataset",
+            "answerable_for_demo": true,
+            "guard": {
+              "ok": true,
+              "action": "allowed",
+              "label": "market",
+              "untraceable": [],
+              "untraceable_count": 0,
+              "numbers_found": 9,
+              "allowed_count": 12,
+              "reason": ""
+            }
+          },
+          {
+            "block": "B",
+            "size_marla": 7,
+            "matched_plots": 2,
+            "observation_count": 6,
+            "price_min_pkr": null,
+            "price_median_pkr": null,
+            "price_max_pkr": null,
+            "latest_date": "2026-10-06",
+            "coverage_level": "partial",
+            "trust_status": "insufficient_data",
+            "answerable_for_demo": false,
+            "guard": {
+              "ok": true,
+              "action": "allowed",
+              "label": "market",
+              "untraceable": [],
+              "untraceable_count": 0,
+              "numbers_found": 6,
+              "allowed_count": 11,
+              "reason": ""
+            }
+          },
+          {
+            "block": "B",
+            "size_marla": 10,
+            "matched_plots": 12,
+            "observation_count": 51,
+            "price_min_pkr": 9300000.0,
+            "price_median_pkr": 12400000.0,
+            "price_max_pkr": 15000000.0,
+            "latest_date": "2026-10-07",
+            "coverage_level": "partial",
+            "trust_status": "partial_dataset",
+            "answerable_for_demo": true,
+            "guard": {
+              "ok": true,
+              "action": "allowed",
+              "label": "market",
+              "untraceable": [],
+              "untraceable_count": 0,
+              "numbers_found": 9,
+              "allowed_count": 10,
+              "reason": ""
+            }
+          },
+          {
+            "block": "B",
+            "size_marla": 14,
+            "matched_plots": 5,
+            "observation_count": 6,
+            "price_min_pkr": 11600000.0,
+            "price_median_pkr": 12000000.0,
+            "price_max_pkr": 14500000.0,
+            "latest_date": "2026-10-07",
+            "coverage_level": "partial",
+            "trust_status": "partial_dataset",
+            "answerable_for_demo": true,
+            "guard": {
+              "ok": true,
+              "action": "allowed",
+              "label": "market",
+              "untraceable": [],
+              "untraceable_count": 0,
+              "numbers_found": 9,
+              "allowed_count": 11,
+              "reason": ""
+            }
+          },
+          {
+            "block": "B",
+            "size_marla": 20,
+            "matched_plots": 4,
+            "observation_count": 16,
+            "price_min_pkr": 15000000.0,
+            "price_median_pkr": 15750000.0,
+            "price_max_pkr": 17000000.0,
+            "latest_date": "2026-10-07",
+            "coverage_level": "partial",
+            "trust_status": "partial_dataset",
+            "answerable_for_demo": true,
+            "guard": {
+              "ok": true,
+              "action": "allowed",
+              "label": "market",
+              "untraceable": [],
+              "untraceable_count": 0,
+              "numbers_found": 9,
+              "allowed_count": 11,
+              "reason": ""
+            }
+          },
+          {
+            "block": "B",
+            "size_marla": 40,
+            "matched_plots": 0,
+            "observation_count": 0,
+            "price_min_pkr": null,
+            "price_median_pkr": null,
+            "price_max_pkr": null,
+            "latest_date": null,
+            "coverage_level": "insufficient",
+            "trust_status": "insufficient_data",
+            "answerable_for_demo": false,
+            "guard": {
+              "ok": true,
+              "action": "allowed",
+              "label": "market",
+              "untraceable": [],
+              "untraceable_count": 0,
+              "numbers_found": 3,
+              "allowed_count": 6,
+              "reason": ""
+            }
+          },
+          {
+            "block": "C",
+            "size_marla": 5,
+            "matched_plots": 47,
+            "observation_count": 146,
+            "price_min_pkr": 3950000.0,
+            "price_median_pkr": 5600000.0,
+            "price_max_pkr": 6800000.0,
+            "latest_date": "2026-10-07",
+            "coverage_level": "partial",
+            "trust_status": "partial_dataset",
+            "answerable_for_demo": true,
+            "guard": {
+              "ok": true,
+              "action": "allowed",
+              "label": "market",
+              "untraceable": [],
+              "untraceable_count": 0,
+              "numbers_found": 9,
+              "allowed_count": 12,
+              "reason": ""
+            }
+          },
+          {
+            "block": "C",
+            "size_marla": 7,
+            "matched_plots": 21,
+            "observation_count": 43,
+            "price_min_pkr": 6000000.0,
+            "price_median_pkr": 7900000.0,
+            "price_max_pkr": 11500000.0,
+            "latest_date": "2026-10-07",
+            "coverage_level": "partial",
+            "trust_status": "partial_dataset",
+            "answerable_for_demo": true,
+            "guard": {
+              "ok": true,
+              "action": "allowed",
+              "label": "market",
+              "untraceable": [],
+              "untraceable_count": 0,
+              "numbers_found": 9,
+              "allowed_count": 11,
+              "reason": ""
+            }
+          },
+          {
+            "block": "C",
+            "size_marla": 10,
+            "matched_plots": 2,
+            "observation_count": 3,
+            "price_min_pkr": null,
+            "price_median_pkr": null,
+            "price_max_pkr": null,
+            "latest_date": "2026-10-07",
+            "coverage_level": "partial",
+            "trust_status": "insufficient_data",
+            "answerable_for_demo": false,
+            "guard": {
+              "ok": true,
+              "action": "allowed",
+              "label": "market",
+              "untraceable": [],
+              "untraceable_count": 0,
+              "numbers_found": 6,
+              "allowed_count": 9,
+              "reason": ""
+            }
+          },
+          {
+            "block": "C",
+            "size_marla": 14,
+            "matched_plots": 0,
+            "observation_count": 0,
+            "price_min_pkr": null,
+            "price_median_pkr": null,
+            "price_max_pkr": null,
+            "latest_date": null,
+            "coverage_level": "insufficient",
+            "trust_status": "insufficient_data",
+            "answerable_for_demo": false,
+            "guard": {
+              "ok": true,
+              "action": "allowed",
+              "label": "market",
+              "untraceable": [],
+              "untraceable_count": 0,
+              "numbers_found": 3,
+              "allowed_count": 6,
+              "reason": ""
+            }
+          },
+          {
+            "block": "C",
+            "size_marla": 20,
+            "matched_plots": 4,
+            "observation_count": 6,
+            "price_min_pkr": 16500000.0,
+            "price_median_pkr": 16500000.0,
+            "price_max_pkr": 16500000.0,
+            "latest_date": "2026-10-06",
+            "coverage_level": "partial",
+            "trust_status": "partial_dataset",
+            "answerable_for_demo": true,
+            "guard": {
+              "ok": true,
+              "action": "allowed",
+              "label": "market",
+              "untraceable": [],
+              "untraceable_count": 0,
+              "numbers_found": 9,
+              "allowed_count": 8,
+              "reason": ""
+            }
+          },
+          {
+            "block": "C",
+            "size_marla": 40,
+            "matched_plots": 0,
+            "observation_count": 0,
+            "price_min_pkr": null,
+            "price_median_pkr": null,
+            "price_max_pkr": null,
+            "latest_date": null,
+            "coverage_level": "insufficient",
+            "trust_status": "insufficient_data",
+            "answerable_for_demo": false,
+            "guard": {
+              "ok": true,
+              "action": "allowed",
+              "label": "market",
+              "untraceable": [],
+              "untraceable_count": 0,
+              "numbers_found": 3,
+              "allowed_count": 6,
+              "reason": ""
+            }
+          }
+        ],
+        "guard": {
+          "ok": true,
+          "action": "allowed",
+          "label": "market",
+          "untraceable": [],
+          "untraceable_count": 0,
+          "numbers_found": 1,
+          "allowed_count": 2,
+          "reason": ""
+        }
+      },
+      "response_text": null,
+      "label": "market"
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:8099/api/lookup?block=C&size_marla=7",
+      "request_body": null,
+      "status": 200,
+      "response": {
+        "answerable": true,
+        "reply_mode": "verified_market_facts",
+        "reply": "Based on 21 matching listings and 43 recorded observations in the current partial Faisal Hills market data, the asking-price range is PKR 6,000,000 to PKR 11,500,000, with a median of PKR 7,900,000. Latest observation date: 2026-10-07. These are dealer asking prices, not confirmed sold prices. Human approval is required before sending.",
+        "reason": "",
+        "filters": {
+          "block": "C",
+          "size_marla": 7.0,
+          "corner": null,
+          "sun_facing": null,
+          "ndc_open": null
+        },
+        "facts": {
+          "facts_source": "FaisalHills verified partial master",
+          "facts_type": "dealer asking-price observations",
+          "matched_plots": 21,
+          "observation_count": 43,
+          "price_min_pkr": 6000000.0,
+          "price_median_pkr": 7900000.0,
+          "price_max_pkr": 11500000.0,
+          "latest_date": "2026-10-07",
+          "coverage_level": "partial",
+          "trust_status": "partial_dataset",
+          "answerable_for_demo": true,
+          "distinct_source_chats": 2,
+          "sender_count_available": false,
+          "price_basis": "dealer_asking_price",
+          "is_sold_price": false,
+          "min_listings_for_answer": 3,
+          "human_action": "human_approval_required",
+          "reply_mode": "verified_market_facts",
+          "closest_match": null
+        },
+        "summary": {
+          "matched_plots": 21,
+          "observation_count": 43,
+          "price_min_pkr": 6000000.0,
+          "price_median_pkr": 7900000.0,
+          "price_max_pkr": 11500000.0,
+          "latest_date": "2026-10-07",
+          "coverage_level": "partial",
+          "trust_status": "partial_dataset",
+          "answerable_for_demo": true
+        },
+        "guard": {
+          "ok": true,
+          "action": "allowed",
+          "label": "lookup",
+          "untraceable": [],
+          "untraceable_count": 0,
+          "numbers_found": 26,
+          "allowed_count": 11,
+          "reason": ""
+        }
+      },
+      "response_text": null,
+      "label": "lookup"
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:8099/api/questions",
+      "request_body": null,
+      "status": 200,
+      "response": {
+        "version": "1.0",
+        "min_listings_for_answer": 3,
+        "questions": [
+          {
+            "id": 1,
+            "question": "What is the price of a 5 marla plot in Block A?",
+            "filters": {
+              "block": "A",
+              "size_marla": 5
+            },
+            "expect_matched_plots": 21,
+            "expect_median_pkr": 8400000,
+            "expect_min_pkr": 5400000,
+            "expect_max_pkr": 12200000,
+            "expect_observation_count": 27,
+            "must_answer": true,
+            "expectations_verified": true,
+            "guard": {
+              "ok": true,
+              "action": "allowed",
+              "label": "questions",
+              "untraceable": [],
+              "untraceable_count": 0,
+              "numbers_found": 5,
+              "allowed_count": 12,
+              "reason": ""
+            }
+          },
+          {
+            "id": 2,
+            "question": "What is the price of a 7 marla plot in Block A?",
+            "filters": {
+              "block": "A",
+              "size_marla": 7
+            },
+            "expect_matched_plots": 10,
+            "expect_median_pkr": 11250000,
+            "expect_min_pkr": 6500000,
+            "expect_max_pkr": 14200000,
+            "expect_observation_count": 15,
+            "must_answer": true,
+            "expectations_verified": true,
+            "guard": {
+              "ok": true,
+              "action": "allowed",
+              "label": "questions",
+              "untraceable": [],
+              "untraceable_count": 0,
+              "numbers_found": 5,
+              "allowed_count": 10,
+              "reason": ""
+            }
+          },
+          {
+            "id": 3,
+            "question": "What is the price of a 10 marla plot in Block A?",
+            "filters": {
+              "block": "A",
+              "size_marla": 10
+            },
+            "expect_matched_plots": 5,
+            "expect_median_pkr": 14500000,
+            "expect_min_pkr": 11500000,
+            "expect_max_pkr": 14600000,
+            "expect_observation_count": 6,
+            "must_answer": true,
+            "expectations_verified": true,
+            "guard": {
+              "ok": true,
+              "action": "allowed",
+              "label": "questions",
+              "untraceable": [],
+              "untraceable_count": 0,
+              "numbers_found": 5,
+              "allowed_count": 10,
+              "reason": ""
+            }
+          },
+          {
+            "id": 4,
+            "question": "What is the price of a 20 marla plot in Block A?",
+            "filters": {
+              "block": "A",
+              "size_marla": 20
+            },
+            "expect_matched_plots": 4,
+            "expect_median_pkr": 18500000,
+            "expect_min_pkr": 18000000,
+            "expect_max_pkr": 19000000,
+            "expect_observation_count": 4,
+            "must_answer": true,
+            "expectations_verified": true,
+            "guard": {
+              "ok": true,
+              "action": "allowed",
+              "label": "questions",
+              "untraceable": [],
+              "untraceable_count": 0,
+              "numbers_found": 5,
+              "allowed_count": 10,
+              "reason": ""
+            }
+          },
+          {
+            "id": 5,
+            "question": "What is the price of a 40 marla plot in Block A?",
+            "filters": {
+              "block": "A",
+              "size_marla": 40
+            },
+            "expect_matched_plots": 5,
+            "expect_median_pkr": 35000000,
+            "expect_min_pkr": 34500000,
+            "expect_max_pkr": 35000000,
+            "expect_observation_count": 5,
+            "must_answer": true,
+            "expectations_verified": true,
+            "guard": {
+              "ok": true,
+              "action": "allowed",
+              "label": "questions",
+              "untraceable": [],
+              "untraceable_count": 0,
+              "numbers_found": 5,
+              "allowed_count": 9,
+              "reason": ""
+            }
+          },
+          {
+            "id": 6,
+            "question": "What is the price of a 5 marla plot in Block B?",
+            "filters": {
+              "block": "B",
+              "size_marla": 5
+            },
+            "expect_matched_plots": 29,
+            "expect_median_pkr": 5400000,
+            "expect_min_pkr": 4500000,
+            "expect_max_pkr": 6600000,
+            "expect_observation_count": 86,
+            "must_answer": true,
+            "expectations_verified": true,
+            "guard": {
+              "ok": true,
+              "action": "allowed",
+              "label": "questions",
+              "untraceable": [],
+              "untraceable_count": 0,
+              "numbers_found": 5,
+              "allowed_count": 12,
+              "reason": ""
+            }
+          },
+          {
+            "id": 7,
+            "question": "What is the price of a 10 marla plot in Block B?",
+            "filters": {
+              "block": "B",
+              "size_marla": 10
+            },
+            "expect_matched_plots": 12,
+            "expect_median_pkr": 12400000,
+            "expect_min_pkr": 9300000,
+            "expect_max_pkr": 15000000,
+            "expect_observation_count": 51,
+            "must_answer": true,
+            "expectations_verified": true,
+            "guard": {
+              "ok": true,
+              "action": "allowed",
+              "label": "questions",
+              "untraceable": [],
+              "untraceable_count": 0,
+              "numbers_found": 5,
+              "allowed_count": 10,
+              "reason": ""
+            }
+          },
+          {
+            "id": 8,
+            "question": "What is the price of a 14 marla plot in Block B?",
+            "filters": {
+              "block": "B",
+              "size_marla": 14
+            },
+            "expect_matched_plots": 5,
+            "expect_median_pkr": 12000000,
+            "expect_min_pkr": 11600000,
+            "expect_max_pkr": 14500000,
+            "expect_observation_count": 6,
+            "must_answer": true,
+            "expectations_verified": true,
+            "guard": {
+              "ok": true,
+              "action": "allowed",
+              "label": "questions",
+              "untraceable": [],
+              "untraceable_count": 0,
+              "numbers_found": 5,
+              "allowed_count": 11,
+              "reason": ""
+            }
+          },
+          {
+            "id": 9,
+            "question": "What is the price of a 20 marla plot in Block B?",
+            "filters": {
+              "block": "B",
+              "size_marla": 20
+            },
+            "expect_matched_plots": 4,
+            "expect_median_pkr": 15750000,
+            "expect_min_pkr": 15000000,
+            "expect_max_pkr": 17000000,
+            "expect_observation_count": 16,
+            "must_answer": true,
+            "expectations_verified": true,
+            "guard": {
+              "ok": true,
+              "action": "allowed",
+              "label": "questions",
+              "untraceable": [],
+              "untraceable_count": 0,
+              "numbers_found": 5,
+              "allowed_count": 11,
+              "reason": ""
+            }
+          },
+          {
+            "id": 10,
+            "question": "What is the price of a 5 marla plot in Block C?",
+            "filters": {
+              "block": "C",
+              "size_marla": 5
+            },
+            "expect_matched_plots": 47,
+            "expect_median_pkr": 5600000,
+            "expect_min_pkr": 3950000,
+            "expect_max_pkr": 6800000,
+            "expect_observation_count": 146,
+            "must_answer": true,
+            "expectations_verified": true,
+            "guard": {
+              "ok": true,
+              "action": "allowed",
+              "label": "questions",
+              "untraceable": [],
+              "untraceable_count": 0,
+              "numbers_found": 5,
+              "allowed_count": 12,
+              "reason": ""
+            }
+          },
+          {
+            "id": 11,
+            "question": "What is the price of a 7 marla plot in Block C?",
+            "filters": {
+              "block": "C",
+              "size_marla": 7
+            },
+            "expect_matched_plots": 21,
+            "expect_median_pkr": 7900000,
+            "expect_min_pkr": 6000000,
+            "expect_max_pkr": 11500000,
+            "expect_observation_count": 43,
+            "must_answer": true,
+            "expectations_verified": true,
+            "guard": {
+              "ok": true,
+              "action": "allowed",
+              "label": "questions",
+              "untraceable": [],
+              "untraceable_count": 0,
+              "numbers_found": 5,
+              "allowed_count": 11,
+              "reason": ""
+            }
+          },
+          {
+            "id": 12,
+            "question": "What is the price of a 20 marla plot in Block C?",
+            "filters": {
+              "block": "C",
+              "size_marla": 20
+            },
+            "expect_matched_plots": 4,
+            "expect_median_pkr": 16500000,
+            "expect_min_pkr": 16500000,
+            "expect_max_pkr": 16500000,
+            "expect_observation_count": 6,
+            "must_answer": true,
+            "expectations_verified": true,
+            "guard": {
+              "ok": true,
+              "action": "allowed",
+              "label": "questions",
+              "untraceable": [],
+              "untraceable_count": 0,
+              "numbers_found": 5,
+              "allowed_count": 8,
+              "reason": ""
+            }
+          },
+          {
+            "id": 13,
+            "question": "What is the price of a corner 7 marla plot in Block C?",
+            "filters": {
+              "block": "C",
+              "size_marla": 7,
+              "corner": true
+            },
+            "expect_matched_plots": 3,
+            "expect_median_pkr": 9600000,
+            "expect_min_pkr": 7800000,
+            "expect_max_pkr": 9800000,
+            "expect_observation_count": 3,
+            "must_answer": true,
+            "note": "The flagship corner query IS answerable for block+size+corner. sun_facing is a different story: only 28 of 374 master rows carry it (D-13), so a sun-facing filter is almost always too thin.",
+            "expectations_verified": true,
+            "guard": {
+              "ok": true,
+              "action": "allowed",
+              "label": "questions",
+              "untraceable": [],
+              "untraceable_count": 0,
+              "numbers_found": 5,
+              "allowed_count": 9,
+              "reason": ""
+            }
+          },
+          {
+            "id": 14,
+            "question": "What is the price of a 7 marla plot in Block B?",
+            "filters": {
+              "block": "B",
+              "size_marla": 7
+            },
+            "expect_matched_plots": 2,
+            "must_not_answer": true,
+            "note": "Only 2 listings in B/7 - below the 3-listing threshold. Must say not enough data, never a number.",
+            "expectations_verified": true,
+            "guard": {
+              "ok": true,
+              "action": "allowed",
+              "label": "questions",
+              "untraceable": [],
+              "untraceable_count": 0,
+              "numbers_found": 1,
+              "allowed_count": 11,
+              "reason": ""
+            }
+          },
+          {
+            "id": 15,
+            "question": "What is the price of a 10 marla plot in Block C?",
+            "filters": {
+              "block": "C",
+              "size_marla": 10
+            },
+            "expect_matched_plots": 2,
+            "must_not_answer": true,
+            "note": "Only 2 listings in C/10 - below the 3-listing threshold.",
+            "expectations_verified": true,
+            "guard": {
+              "ok": true,
+              "action": "allowed",
+              "label": "questions",
+              "untraceable": [],
+              "untraceable_count": 0,
+              "numbers_found": 1,
+              "allowed_count": 9,
+              "reason": ""
+            }
+          },
+          {
+            "id": 16,
+            "question": "What is the price of a 14 marla plot in Block A?",
+            "filters": {
+              "block": "A",
+              "size_marla": 14
+            },
+            "expect_matched_plots": 2,
+            "must_not_answer": true,
+            "note": "Only 2 listings in A/14 - below the 3-listing threshold.",
+            "expectations_verified": true,
+            "guard": {
+              "ok": true,
+              "action": "allowed",
+              "label": "questions",
+              "untraceable": [],
+              "untraceable_count": 0,
+              "numbers_found": 1,
+              "allowed_count": 9,
+              "reason": ""
+            }
+          },
+          {
+            "id": 17,
+            "question": "What is the price of a 5 marla plot in Block Z?",
+            "filters": {
+              "block": "Z",
+              "size_marla": 5
+            },
+            "expect_matched_plots": 0,
+            "must_not_answer": true,
+            "note": "Block Z does not exist in the master and is out of v1 scope.",
+            "expectations_verified": true,
+            "guard": {
+              "ok": true,
+              "action": "allowed",
+              "label": "questions",
+              "untraceable": [],
+              "untraceable_count": 0,
+              "numbers_found": 1,
+              "allowed_count": 3,
+              "reason": ""
+            }
+          },
+          {
+            "id": 18,
+            "question": "What is the price of a 10 marla plot in the Executive Block?",
+            "filters": {
+              "block": "E",
+              "size_marla": 10
+            },
+            "expect_matched_plots": 0,
+            "must_not_answer": true,
+            "note": "Executive is parked: v1 scope is Blocks A, B, C only. Executive/10 has 0 rows in the master.",
+            "expectations_verified": true,
+            "guard": {
+              "ok": true,
+              "action": "allowed",
+              "label": "questions",
+              "untraceable": [],
+              "untraceable_count": 0,
+              "numbers_found": 1,
+              "allowed_count": 3,
+              "reason": ""
+            }
+          },
+          {
+            "id": 19,
+            "question": "What is the price of a 999 marla plot in Block C?",
+            "filters": {
+              "block": "C",
+              "size_marla": 999
+            },
+            "expect_matched_plots": 0,
+            "must_not_answer": true,
+            "note": "No such size in the master.",
+            "expectations_verified": true,
+            "guard": {
+              "ok": true,
+              "action": "allowed",
+              "label": "questions",
+              "untraceable": [],
+              "untraceable_count": 0,
+              "numbers_found": 1,
+              "allowed_count": 7,
+              "reason": ""
+            }
+          },
+          {
+            "id": 20,
+            "question": "What is the price of a sun-facing 5 marla plot in Block A?",
+            "filters": {
+              "block": "A",
+              "size_marla": 5,
+              "sun_facing": true
+            },
+            "expect_matched_plots": 1,
+            "must_not_answer": true,
+            "note": "Only 1 sun-facing plot in A/5. The master carries sun_facing on just 28 of 374 rows (346 are null, D-13), so sun-facing filters are almost always too thin to answer. Must say not enough data, never a number.",
+            "expectations_verified": true,
+            "guard": {
+              "ok": true,
+              "action": "allowed",
+              "label": "questions",
+              "untraceable": [],
+              "untraceable_count": 0,
+              "numbers_found": 1,
+              "allowed_count": 10,
+              "reason": ""
+            }
+          }
+        ],
+        "guard": {
+          "ok": true,
+          "action": "allowed",
+          "label": "questions",
+          "untraceable": [],
+          "untraceable_count": 0,
+          "numbers_found": 20,
+          "allowed_count": 0,
+          "reason": ""
+        }
+      },
+      "response_text": null,
+      "label": "questions"
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:8099/api/next-best-action",
+      "request_body": null,
+      "status": 200,
+      "response": {
+        "action": "offer_verified_alternatives",
+        "label": "Offer the verified alternatives: 5 marla in Block A.",
+        "reason": "the request is covered by verified alternatives",
+        "requirements_stated": {},
+        "requirements_unknown": [
+          "budget_min_pkr",
+          "budget_max_pkr",
+          "purpose",
+          "block",
+          "size_marla",
+          "timeline"
+        ],
+        "options": [
+          {
+            "block": "A",
+            "size_marla": 5.0,
+            "reason": [
+              "5 marla in Block A",
+              "21 verified listings with 27 observations"
+            ]
+          },
+          {
+            "block": "A",
+            "size_marla": 7.0,
+            "reason": [
+              "7 marla in Block A",
+              "10 verified listings with 15 observations"
+            ]
+          },
+          {
+            "block": "B",
+            "size_marla": 5.0,
+            "reason": [
+              "5 marla in Block B",
+              "29 verified listings with 86 observations"
+            ]
+          }
+        ],
+        "removed": [],
+        "clarifying_question": null,
+        "thin_cells": [
+          {
+            "block": "A",
+            "size_marla": 14.0,
+            "listing_count": 2,
+            "min_listings_for_answer": 3,
+            "reason": [
+              "2 listings, below the 3-listing evidence threshold"
+            ]
+          },
+          {
+            "block": "B",
+            "size_marla": 7.0,
+            "listing_count": 2,
+            "min_listings_for_answer": 3,
+            "reason": [
+              "2 listings, below the 3-listing evidence threshold"
+            ]
+          },
+          {
+            "block": "C",
+            "size_marla": 10.0,
+            "listing_count": 2,
+            "min_listings_for_answer": 3,
+            "reason": [
+              "2 listings, below the 3-listing evidence threshold"
+            ]
+          }
+        ],
+        "requires_human_approval": true,
+        "availability_claimed": false
+      },
+      "response_text": null,
+      "label": "next best action"
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:8099/api/evidence?block=C&size_marla=7",
+      "request_body": null,
+      "status": 200,
+      "response": {
+        "listings": [
+          {
+            "listing_ref": "LAHCRZPYFEEQZ",
+            "block": "C",
+            "size_marla": 7.0,
+            "price_min_pkr": null,
+            "price_median_pkr": null,
+            "price_max_pkr": null,
+            "price_latest_pkr": null,
+            "latest_date": "2026-10-06",
+            "observation_count": 2,
+            "corner": null,
+            "sun_facing": null,
+            "ndc_open": true,
+            "matching_reason": [
+              "block C",
+              "7 marla"
+            ],
+            "plot_number": null,
+            "plot_number_redacted": true
+          },
+          {
+            "listing_ref": "LAQHFTDUCXNRT",
+            "block": "C",
+            "size_marla": 7.0,
+            "price_min_pkr": 6000000.0,
+            "price_median_pkr": 6000000.0,
+            "price_max_pkr": 6000000.0,
+            "price_latest_pkr": 6000000.0,
+            "latest_date": "2026-10-07",
+            "observation_count": 2,
+            "corner": null,
+            "sun_facing": null,
+            "ndc_open": true,
+            "matching_reason": [
+              "block C",
+              "7 marla"
+            ],
+            "plot_number": null,
+            "plot_number_redacted": true
+          },
+          {
+            "listing_ref": "LDQSTZRFLNDCC",
+            "block": "C",
+            "size_marla": 7.0,
+            "price_min_pkr": 11000000.0,
+            "price_median_pkr": 11250000.0,
+            "price_max_pkr": 11500000.0,
+            "price_latest_pkr": 11500000.0,
+            "latest_date": "2026-10-06",
+            "observation_count": 4,
+            "corner": null,
+            "sun_facing": null,
+            "ndc_open": null,
+            "matching_reason": [
+              "block C",
+              "7 marla"
+            ],
+            "plot_number": null,
+            "plot_number_redacted": true
+          },
+          {
+            "listing_ref": "LFCKVVQGHKXQG",
+            "block": "C",
+            "size_marla": 7.0,
+            "price_min_pkr": 8100000.0,
+            "price_median_pkr": 8100000.0,
+            "price_max_pkr": 8100000.0,
+            "price_latest_pkr": 8100000.0,
+            "latest_date": "2026-10-06",
+            "observation_count": 1,
+            "corner": null,
+            "sun_facing": null,
+            "ndc_open": true,
+            "matching_reason": [
+              "block C",
+              "7 marla"
+            ],
+            "plot_number": null,
+            "plot_number_redacted": true
+          },
+          {
+            "listing_ref": "LFGPEEOKGNTYG",
+            "block": "C",
+            "size_marla": 7.0,
+            "price_min_pkr": 6200000.0,
+            "price_median_pkr": 6200000.0,
+            "price_max_pkr": 6200000.0,
+            "price_latest_pkr": 6200000.0,
+            "latest_date": "2026-10-05",
+            "observation_count": 2,
+            "corner": null,
+            "sun_facing": null,
+            "ndc_open": true,
+            "matching_reason": [
+              "block C",
+              "7 marla"
+            ],
+            "plot_number": null,
+            "plot_number_redacted": true
+          },
+          {
+            "listing_ref": "LGFCMIIXAJEFV",
+            "block": "C",
+            "size_marla": 7.0,
+            "price_min_pkr": 9600000.0,
+            "price_median_pkr": 9600000.0,
+            "price_max_pkr": 9600000.0,
+            "price_latest_pkr": 9600000.0,
+            "latest_date": "2026-09-28",
+            "observation_count": 1,
+            "corner": true,
+            "sun_facing": null,
+            "ndc_open": true,
+            "matching_reason": [
+              "block C",
+              "7 marla"
+            ],
+            "plot_number": null,
+            "plot_number_redacted": true
+          },
+          {
+            "listing_ref": "LGJDEOWFGXGYV",
+            "block": "C",
+            "size_marla": 7.0,
+            "price_min_pkr": 9800000.0,
+            "price_median_pkr": 9800000.0,
+            "price_max_pkr": 9800000.0,
+            "price_latest_pkr": 9800000.0,
+            "latest_date": "2026-09-23",
+            "observation_count": 1,
+            "corner": true,
+            "sun_facing": null,
+            "ndc_open": true,
+            "matching_reason": [
+              "block C",
+              "7 marla"
+            ],
+            "plot_number": null,
+            "plot_number_redacted": true
+          },
+          {
+            "listing_ref": "LIOKSLLQHCCQZ",
+            "block": "C",
+            "size_marla": 7.0,
+            "price_min_pkr": 7800000.0,
+            "price_median_pkr": 7900000.0,
+            "price_max_pkr": 8000000.0,
+            "price_latest_pkr": null,
+            "latest_date": "2026-10-07",
+            "observation_count": 4,
+            "corner": null,
+            "sun_facing": null,
+            "ndc_open": null,
+            "matching_reason": [
+              "block C",
+              "7 marla"
+            ],
+            "plot_number": null,
+            "plot_number_redacted": true
+          },
+          {
+            "listing_ref": "LNUUILGSJRRGX",
+            "block": "C",
+            "size_marla": 7.0,
+            "price_min_pkr": null,
+            "price_median_pkr": null,
+            "price_max_pkr": null,
+            "price_latest_pkr": null,
+            "latest_date": "2026-09-26",
+            "observation_count": 3,
+            "corner": null,
+            "sun_facing": true,
+            "ndc_open": false,
+            "matching_reason": [
+              "block C",
+              "7 marla"
+            ],
+            "plot_number": null,
+            "plot_number_redacted": true
+          },
+          {
+            "listing_ref": "LOTDMTUKLEXZT",
+            "block": "C",
+            "size_marla": 7.0,
+            "price_min_pkr": 7500000.0,
+            "price_median_pkr": 7500000.0,
+            "price_max_pkr": 7500000.0,
+            "price_latest_pkr": 7500000.0,
+            "latest_date": "2026-10-05",
+            "observation_count": 1,
+            "corner": null,
+            "sun_facing": null,
+            "ndc_open": true,
+            "matching_reason": [
+              "block C",
+              "7 marla"
+            ],
+            "plot_number": null,
+            "plot_number_redacted": true
+          },
+          {
+            "listing_ref": "LQQQLNPZODSOL",
+            "block": "C",
+            "size_marla": 7.0,
+            "price_min_pkr": null,
+            "price_median_pkr": null,
+            "price_max_pkr": null,
+            "price_latest_pkr": null,
+            "latest_date": "2026-10-06",
+            "observation_count": 1,
+            "corner": null,
+            "sun_facing": null,
+            "ndc_open": true,
+            "matching_reason": [
+              "block C",
+              "7 marla"
+            ],
+            "plot_number": null,
+            "plot_number_redacted": true
+          },
+          {
+            "listing_ref": "LQWOPEQIEBGZB",
+            "block": "C",
+            "size_marla": 7.0,
+            "price_min_pkr": 6700000.0,
+            "price_median_pkr": 6700000.0,
+            "price_max_pkr": 6700000.0,
+            "price_latest_pkr": 6700000.0,
+            "latest_date": "2026-10-06",
+            "observation_count": 1,
+            "corner": null,
+            "sun_facing": null,
+            "ndc_open": false,
+            "matching_reason": [
+              "block C",
+              "7 marla"
+            ],
+            "plot_number": null,
+            "plot_number_redacted": true
+          },
+          {
+            "listing_ref": "LRCGONGEFSNOF",
+            "block": "C",
+            "size_marla": 7.0,
+            "price_min_pkr": 8000000.0,
+            "price_median_pkr": 8000000.0,
+            "price_max_pkr": 8000000.0,
+            "price_latest_pkr": 8000000.0,
+            "latest_date": "2026-09-28",
+            "observation_count": 2,
+            "corner": null,
+            "sun_facing": null,
+            "ndc_open": true,
+            "matching_reason": [
+              "block C",
+              "7 marla"
+            ],
+            "plot_number": null,
+            "plot_number_redacted": true
+          },
+          {
+            "listing_ref": "LSAQXKSSYHJEB",
+            "block": "C",
+            "size_marla": 7.0,
+            "price_min_pkr": 9400000.0,
+            "price_median_pkr": 9400000.0,
+            "price_max_pkr": 9400000.0,
+            "price_latest_pkr": 9400000.0,
+            "latest_date": "2026-09-28",
+            "observation_count": 1,
+            "corner": null,
+            "sun_facing": null,
+            "ndc_open": true,
+            "matching_reason": [
+              "block C",
+              "7 marla"
+            ],
+            "plot_number": null,
+            "plot_number_redacted": true
+          },
+          {
+            "listing_ref": "LSIJHATYCALSL",
+            "block": "C",
+            "size_marla": 7.0,
+            "price_min_pkr": null,
+            "price_median_pkr": null,
+            "price_max_pkr": null,
+            "price_latest_pkr": null,
+            "latest_date": "2026-10-06",
+            "observation_count": 2,
+            "corner": null,
+            "sun_facing": null,
+            "ndc_open": true,
+            "matching_reason": [
+              "block C",
+              "7 marla"
+            ],
+            "plot_number": null,
+            "plot_number_redacted": true
+          },
+          {
+            "listing_ref": "LTLIRRUCWIGOQ",
+            "block": "C",
+            "size_marla": 7.0,
+            "price_min_pkr": null,
+            "price_median_pkr": null,
+            "price_max_pkr": null,
+            "price_latest_pkr": null,
+            "latest_date": "2026-10-07",
+            "observation_count": 1,
+            "corner": null,
+            "sun_facing": null,
+            "ndc_open": true,
+            "matching_reason": [
+              "block C",
+              "7 marla"
+            ],
+            "plot_number": null,
+            "plot_number_redacted": true
+          },
+          {
+            "listing_ref": "LTQPCCEOBKHJP",
+            "block": "C",
+            "size_marla": 7.0,
+            "price_min_pkr": null,
+            "price_median_pkr": null,
+            "price_max_pkr": null,
+            "price_latest_pkr": null,
+            "latest_date": "2026-10-07",
+            "observation_count": 1,
+            "corner": null,
+            "sun_facing": null,
+            "ndc_open": null,
+            "matching_reason": [
+              "block C",
+              "7 marla"
+            ],
+            "plot_number": null,
+            "plot_number_redacted": true
+          },
+          {
+            "listing_ref": "LWRGYIFYGPRMX",
+            "block": "C",
+            "size_marla": 7.0,
+            "price_min_pkr": 7600000.0,
+            "price_median_pkr": 7600000.0,
+            "price_max_pkr": 7600000.0,
+            "price_latest_pkr": 7600000.0,
+            "latest_date": "2026-10-07",
+            "observation_count": 2,
+            "corner": null,
+            "sun_facing": null,
+            "ndc_open": false,
+            "matching_reason": [
+              "block C",
+              "7 marla"
+            ],
+            "plot_number": null,
+            "plot_number_redacted": true
+          },
+          {
+            "listing_ref": "LXFIRPFCDQRYK",
+            "block": "C",
+            "size_marla": 7.0,
+            "price_min_pkr": 7800000.0,
+            "price_median_pkr": 7800000.0,
+            "price_max_pkr": 7800000.0,
+            "price_latest_pkr": 7800000.0,
+            "latest_date": "2026-10-05",
+            "observation_count": 1,
+            "corner": true,
+            "sun_facing": null,
+            "ndc_open": true,
+            "matching_reason": [
+              "block C",
+              "7 marla"
+            ],
+            "plot_number": null,
+            "plot_number_redacted": true
+          },
+          {
+            "listing_ref": "LYOONSAGWMMCR",
+            "block": "C",
+            "size_marla": 7.0,
+            "price_min_pkr": 6700000.0,
+            "price_median_pkr": 6700000.0,
+            "price_max_pkr": 6700000.0,
+            "price_latest_pkr": 6700000.0,
+            "latest_date": "2026-10-06",
+            "observation_count": 1,
+            "corner": null,
+            "sun_facing": null,
+            "ndc_open": false,
+            "matching_reason": [
+              "block C",
+              "7 marla"
+            ],
+            "plot_number": null,
+            "plot_number_redacted": true
+          },
+          {
+            "listing_ref": "LZZPAQCCPMGVV",
+            "block": "C",
+            "size_marla": 7.0,
+            "price_min_pkr": 8000000.0,
+            "price_median_pkr": 8000000.0,
+            "price_max_pkr": 8000000.0,
+            "price_latest_pkr": 8000000.0,
+            "latest_date": "2026-09-29",
+            "observation_count": 9,
+            "corner": null,
+            "sun_facing": null,
+            "ndc_open": null,
+            "matching_reason": [
+              "block C",
+              "7 marla"
+            ],
+            "plot_number": null,
+            "plot_number_redacted": true
+          }
+        ],
+        "summary": {
+          "matched_plots": 21,
+          "observation_count": 43,
+          "priced_plots": 15,
+          "price_min_pkr": 6000000.0,
+          "price_median_pkr": 7900000.0,
+          "price_max_pkr": 11500000.0,
+          "latest_date": "2026-10-07",
+          "coverage_level": "partial",
+          "trust_status": "partial_dataset",
+          "answerable_for_demo": true
+        },
+        "filters": {
+          "block": "C",
+          "size_marla": 7.0,
+          "corner": null,
+          "sun_facing": null,
+          "ndc_open": null
+        },
+        "answerable": true,
+        "min_listings_for_answer": 3,
+        "cell": {
+          "block": "C",
+          "size_marla": 7.0
+        },
+        "evidence_source": "FaisalHills verified partial master (read-only)",
+        "price_basis": "dealer asking prices",
+        "is_sold_price": false,
+        "plot_number_mode": "redacted",
+        "excluded_fields": [
+          "notes",
+          "plot_number",
+          "size_raw",
+          "source_chats"
+        ],
+        "total_matched": 21,
+        "returned": 21,
+        "limited": false,
+        "guard": {
+          "ok": true,
+          "action": "allowed",
+          "label": "evidence",
+          "untraceable": [],
+          "untraceable_count": 0,
+          "numbers_found": 199,
+          "allowed_count": 32,
+          "reason": ""
+        }
+      },
+      "response_text": null,
+      "label": "evidence"
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:8099/api/recommendations",
+      "request_body": null,
+      "status": 200,
+      "response": {
+        "options": [],
+        "thin_cells": [],
+        "answerable": false,
+        "next_best_action": {
+          "action": "escalate_to_human",
+          "label": "Hand the conversation to a member of the team.",
+          "requires_human_approval": true,
+          "reason": "the recommendation could not be validated"
+        },
+        "guard": {
+          "ok": false,
+          "action": "blocked",
+          "label": "recommendations",
+          "untraceable": [
+            {
+              "redacted": true
+            },
+            {
+              "redacted": true
+            },
+            {
+              "redacted": true
+            },
+            {
+              "redacted": true
+            },
+            {
+              "redacted": true
+            },
+            {
+              "redacted": true
+            },
+            {
+              "redacted": true
+            },
+            {
+              "redacted": true
+            },
+            {
+              "redacted": true
+            },
+            {
+              "redacted": true
+            },
+            {
+              "redacted": true
+            },
+            {
+              "redacted": true
+            },
+            {
+              "redacted": true
+            },
+            {
+              "redacted": true
+            },
+            {
+              "redacted": true
+            },
+            {
+              "redacted": true
+            },
+            {
+              "redacted": true
+            },
+            {
+              "redacted": true
+            },
+            {
+              "redacted": true
+            },
+            {
+              "redacted": true
+            },
+            {
+              "redacted": true
+            },
+            {
+              "redacted": true
+            },
+            {
+              "redacted": true
+            },
+            {
+              "redacted": true
+            },
+            {
+              "redacted": true
+            },
+            {
+              "redacted": true
+            },
+            {
+              "redacted": true
+            },
+            {
+              "redacted": true
+            },
+            {
+              "redacted": true
+            },
+            {
+              "redacted": true
+            },
+            {
+              "redacted": true
+            },
+            {
+              "redacted": true
+            },
+            {
+              "redacted": true
+            },
+            {
+              "redacted": true
+            },
+            {
+              "redacted": true
+            },
+            {
+              "redacted": true
+            },
+            {
+              "redacted": true
+            },
+            {
+              "redacted": true
+            },
+            {
+              "redacted": true
+            },
+            {
+              "redacted": true
+            },
+            {
+              "redacted": true
+            },
+            {
+              "redacted": true
+            },
+            {
+              "redacted": true
+            },
+            {
+              "redacted": true
+            }
+          ],
+          "untraceable_count": 44,
+          "numbers_found": 599,
+          "allowed_count": 23,
+          "reason": "44 number(s) in the recommendations do not trace to the approved master."
+        }
+      },
+      "response_text": null,
+      "label": "recommendations"
+    }
+  ]
+}

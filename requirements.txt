@@ -1,0 +1,31 @@
+# Faisal Hills AI Lead Desk - Python dependencies
+#
+# Test/development dependencies only.
+# The application runtime (app/, market/, data/) is stdlib-only: sqlite3,
+# json, re, statistics, urllib, pathlib, dataclasses, typing.
+#
+# RULES_SHORT.md #5: keep it simple - stdlib + pytest. No Postgres, Docker,
+# ONNX, fine-tuning or extra frameworks until a pilot is signed.
+#
+# Install into the project-local virtual environment:
+#   python -m venv .venv
+#   .venv\Scripts\python.exe -m pip install -r requirements.txt
+#   .venv\Scripts\python.exe -m pytest -q
+#
+# M3 baseline (2026-10-21): pytest 9.1.1, Python 3.14.7, Windows.
+
+# Test runner.
+# Installed and verified: 9.1.1. Floor is 7.0 because the `pythonpath`
+# ini option used by pytest.ini to put the project root on sys.path was
+# added in pytest 7.0.
+pytest>=7.0
+
+# Web console (app/server.py) only. NOT required by the core test suite:
+# no test module imports app.server. Installed in the M3 baseline venv so
+# the console can be started, and so any future console test can run.
+# If these are unavailable, console tests must be gated behind
+#   pytest.importorskip("fastapi")
+# so the core suite stays stdlib + pytest (RULES_SHORT.md #5).
+fastapi>=0.110
+uvicorn>=0.29
+

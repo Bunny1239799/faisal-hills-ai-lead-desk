@@ -1,0 +1,54 @@
+{
+  "society": "Faisal Hills",
+  "blocks": [
+    {
+      "code": "A",
+      "canonical_name": "Block A",
+      "aliases": [
+        "block a",
+        "a block",
+        "blka",
+        "block-a",
+        "بلاوک اے",
+        "اے بلاک",
+        "بلاک اے"
+      ]
+    },
+    {
+      "code": "B",
+      "canonical_name": "Block B",
+      "aliases": [
+        "block b",
+        "b block",
+        "blkb",
+        "block-b",
+        "بلاک بی",
+        "بی بلاک"
+      ]
+    },
+    {
+      "code": "C",
+      "canonical_name": "Block C",
+      "aliases": [
+        "block c",
+        "c block",
+        "blkc",
+        "block-c",
+        "بلاک سی",
+        "سی بلاک"
+      ]
+    },
+    {
+      "code": "EXEC",
+      "canonical_name": "Executive Block",
+      "aliases": [
+        "executive block",
+        "executive",
+        "exec block",
+        "exec",
+        "ایگزیکٹو بلاک",
+        "ایگزیکٹو"
+      ]
+    }
+  ]
+}

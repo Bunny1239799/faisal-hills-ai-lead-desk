@@ -1,0 +1,72 @@
+{
+  "version": "1.0",
+  "updated": "2026-10-21",
+  "source": "FAISAL_HILLS_PROJECT_HANDOFF_v2.md section 1 (v1 scope) and section 7 rules 1-5; DEC-01, DEC-03, DEC-07, DEC-08, DEC-22, DEC-23",
+  "description": "Runtime policy configuration for the customer-facing flow. Everything here is data, not code: the application reads these values instead of hard-coding them, so a scope or pricing rule can be changed by the owner without touching Python. The deterministic code still owns every calculation; the LLM never reads this file to produce a number.",
+
+  "active_blocks": ["A", "B", "C"],
+  "parked_blocks": ["D", "E"],
+
+  "min_listings_for_answer": 3,
+  "min_observations_for_answer": 1,
+
+  "price_policy": {
+    "price_basis": "dealer_asking_price",
+    "price_basis_label": "dealer asking prices",
+    "is_sold_price": false,
+    "price_unit": "total_plot_pkr",
+    "per_marla": false,
+    "currency": "PKR",
+    "state_asking_price_disclaimer": true,
+    "show_min_median_max": true,
+    "show_sample_size": true,
+    "show_data_date": true,
+    "show_coverage": true
+  },
+
+  "answer_policy": {
+    "require_human_approval": true,
+    "insufficient_data_action": "escalate_to_human",
+    "insufficient_data_reply": "I need to confirm the current market information with our team before giving you a price.",
+    "answerable_reply_template": "Based on {matched_plots} matching listing{s} and {observation_count} recorded observation{s_observations} in the current partial Faisal Hills market data, the asking-price range is PKR {price_min} to PKR {price_max}, with a median of PKR {price_median}. Latest observation date: {latest_date}. These are dealer asking prices, not confirmed sold prices. Human approval is required before sending.",
+    "never_emit_price_when": [
+      "matched_plots < min_listings_for_answer",
+      "price_median_pkr is null",
+      "the requested block is outside active_blocks"
+    ]
+  },
+
+  "privacy_policy": {
+    "allowed_fact_sources": ["FaisalHills verified partial master"],
+    "allow_sender_names": false,
+    "allow_phone_numbers": false,
+    "allow_raw_text": false,
+    "allow_sender_count": false
+  },
+
+  "lookup_policy": {
+    "master_source": "approved master inventory (read-only)",
+    "master_env_override": "FH_MASTER_PATH",
+    "llm_calculates_prices": false,
+    "llm_invents_prices": false,
+    "llm_invents_availability": false,
+    "llm_invents_payment_plans": false,
+    "llm_invents_locations": false
+  },
+
+  "escalation_policy": {
+    "always_escalate_risk_tags": [
+      "injection",
+      "privacy",
+      "out_of_scope",
+      "legal",
+      "discount",
+      "booking",
+      "abusive",
+      "returns",
+      "broker"
+    ],
+    "escalation_reply": "Thank you for your message. A member of our team will review it and reply personally.",
+    "refusal_reply": "I can only help with Faisal Hills property enquiries. A member of our team will follow up if needed."
+  }
+}

@@ -1,0 +1,31 @@
+# SYNTHETIC TEST DATA - generated for Stage 1 workspace tests. Not real inventory.
+# SYNTHETIC TEST DATA - dealer asking prices in PKR, observation_date YYYY-MM-DD.
+block,size_marla,asking_price_pkr,observation_date,source_note,features
+B,5,5200000,2026-09-20,SYNTHETIC A dealer ask,corner
+B,5,5260000,2026-09-21,SYNTHETIC A dealer ask,
+B,5,5320000,2026-09-22,SYNTHETIC A dealer ask,
+B,5,5380000,2026-09-23,SYNTHETIC A dealer ask,corner
+B,5,5440000,2026-09-24,SYNTHETIC A dealer ask,
+B,5,5500000,2026-09-25,SYNTHETIC A dealer ask,
+B,5,5560000,2026-09-26,SYNTHETIC A dealer ask,corner
+B,5,5620000,2026-09-27,SYNTHETIC A dealer ask,
+B,5,5680000,2026-09-28,SYNTHETIC A dealer ask,
+B,5,5740000,2026-09-29,SYNTHETIC A dealer ask,corner
+B,10,9200000,2026-09-22,SYNTHETIC A dealer ask,
+B,10,9400000,2026-09-23,SYNTHETIC A dealer ask,sun_facing
+B,10,9600000,2026-09-24,SYNTHETIC A dealer ask,
+B,10,9800000,2026-09-25,SYNTHETIC A dealer ask,
+B,7,6800000,2026-09-24,SYNTHETIC A dealer ask,
+B,7,6900000,2026-09-25,SYNTHETIC A dealer ask,
+B,7,7000000,2026-09-26,SYNTHETIC A dealer ask,
+B,20,18500000,2026-09-25,SYNTHETIC A dealer ask,ndc_open
+B,20,18750000,2026-09-26,SYNTHETIC A dealer ask,ndc_open
+B,20,19000000,2026-09-27,SYNTHETIC A dealer ask,ndc_open
+B,20,19250000,2026-09-28,SYNTHETIC A dealer ask,ndc_open
+B,20,19500000,2026-09-29,SYNTHETIC A dealer ask,ndc_open
+A,5,5000000,2026-09-26,SYNTHETIC A dealer ask,
+A,5,5100000,2026-09-27,SYNTHETIC A dealer ask,
+A,10,8800000,2026-09-27,SYNTHETIC A dealer ask,
+A,10,8950000,2026-09-28,SYNTHETIC A dealer ask,
+C,5,4500000,2026-09-28,SYNTHETIC A dealer ask,
+C,5,4700000,2026-09-29,SYNTHETIC A dealer ask,

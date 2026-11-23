@@ -1,0 +1,66 @@
+.env
+*.log
+hf_cache/
+__pycache__/
+.venv/
+*.db
+*.db-shm
+*.db-wal
+*.db-journal
+.aider*
+data/raw_chats/
+data/sample_masked.txt
+data/import_mapping.txt
+data/trusted_prices.csv
+CONTEXT_PACK.md
+*.bak*
+.pytest_cache/
+
+# junk cleanup
+raise
+lost
+.aider*
+CONTEXT_PACK*
+
+# M12.3: ingest-gate staging output (runtime artifacts)
+data/ingest_staging/
+data/replay_reports/
+data/core_flow/
+data/eval_scratch/
+
+# demo run artifacts: browser profiles and the sample master (business data)
+demo/demo_data/
+demo/sample_inventory.jsonl
+
+# unrelated local tooling and runtime dirs
+backups/
+backupss12fix/
+jarvis/
+gemini/
+path/
+logs/
+.zwork/
+.aider.tags.cache.v4/
+evaluation/cache/
+evaluation/replay_runs/
+
+# internal working notes - owner machine only, never part of the share package
+CHECKPOINT*
+DECISIONS*
+DEFECTS*
+PROGRESS*
+RULES_SHORT*
+AI_HANDOFF*
+PROJECT_STATE*
+TASK_*.md
+PROMPT_*
+BACKLOG.md
+docs/MASTER_CONTEXT.*
+archive/
+reports/
+tmp_*/
+tmp*/
+evaluation/datasets/
+evaluation/baselines/
+market/master_inventory.csv
+market/master_coverage.json
