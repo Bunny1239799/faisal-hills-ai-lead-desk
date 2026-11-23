@@ -1,5 +1,13 @@
 # Faisal Hills AI Lead Desk
 
+[![Release](https://img.shields.io/badge/release-v1.0.0-435b67?style=flat-square)](https://github.com/Bunny1239799/faisal-hills-ai-lead-desk/releases/tag/v1.0.0)
+[![Tests](https://img.shields.io/badge/tests-1%2C189%20passing%20%C2%B7%200%20failed-2EA44F?style=flat-square)](#tests)
+[![Python](https://img.shields.io/badge/python-3.11%2B-3776AB?style=flat-square&logo=python&logoColor=white)](requirements.txt)
+[![FastAPI](https://img.shields.io/badge/console-FastAPI-009688?style=flat-square)](app/server.py)
+[![Offline](https://img.shields.io/badge/runtime-offline%20%C2%B7%20no%20API%20keys-777e81?style=flat-square)](#tests)
+[![Human approved](https://img.shields.io/badge/sending-human%20approved%20only-c75e3b?style=flat-square)](#why-this-project-is-different)
+[![License](https://img.shields.io/badge/license-all%20rights%20reserved%20(portfolio)-999999?style=flat-square)](LICENSE)
+
 An operator-first lead desk for the Faisal Hills housing society (near Taxila,
 on the GT Road N-5 corridor). Dealers' WhatsApp-style questions are qualified,
 answered **only** from an approved master inventory, and every customer-facing
@@ -89,7 +97,8 @@ Key modules:
 ## Quick start (Windows)
 
 ```powershell
-cd D:\AI-Projects\laya-gateway
+git clone https://github.com/Bunny1239799/faisal-hills-ai-lead-desk.git
+cd faisal-hills-ai-lead-desk
 
 # 1. project-local virtual environment
 python -m venv .venv
@@ -146,6 +155,22 @@ current count and date are recorded in
 
 ## Status
 
-Production pilot on the owner machine; 1,000+ offline tests passing; no open
-critical defects. Planned modules (marked "Soon" in the UI): 3D visualization,
-voice intake, sales intelligence, settings.
+Production pilot. Release v1.0.0 was certified on 22 November 2026 with
+**1,189 offline tests passing and 0 failed**, every serving API route
+guard-covered, and a clean repository tree. Planned modules (marked "Soon" in
+the UI): 3D visualization, voice intake, sales intelligence, settings.
+
+## Author
+
+**Muhammad Hanzala** - AI evaluator and LLM quality analyst with 4+ years in software
+quality engineering for transactional supply-chain and inventory systems; TypeScript,
+NestJS, PostgreSQL and Python.
+
+- GitHub: [@Bunny1239799](https://github.com/Bunny1239799)
+- Email: m.hanzala3940@gmail.com
+- Contributions and questions: [CONTRIBUTING.md](CONTRIBUTING.md). Security reports: [SECURITY.md](SECURITY.md).
+
+## License
+
+All rights reserved (c) 2026 Muhammad Hanzala. Published for portfolio and evaluation
+purposes; commercial use requires written permission. See [LICENSE](LICENSE).

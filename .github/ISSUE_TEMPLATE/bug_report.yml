@@ -1,0 +1,53 @@
+name: Bug report
+description: Something does not behave as documented
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for the report. Please keep dealer data, phone numbers and
+        prices from private sources out of this form - use synthetic examples.
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened
+      description: What you observed, and what you expected instead.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. Start the desk with .\start_operator_desk.bat
+        2. Open /operator
+        3. Send: What is the price of a 7 marla plot in Block C?
+    validations:
+      required: true
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      options:
+        - operator desk (page)
+        - conversation pipeline
+        - guards (fact / claim / traceability)
+        - inventory workspace
+        - reports / follow-ups
+        - system status
+        - tests
+        - documentation
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Version
+      description: Release tag or commit (for example v1.0.0 or 17f7fa5)
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence
+      description: Test output, the relevant reply text (synthetic), or a screenshot.
